@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+    #container{
+        background-image: url('bgFoto.jpg');
+        background-repeat:round;
+        height:400px;
+        ;
+        
+    }
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>home page</title>
+</head>
+<body>
+    <div id="container">
+<div class="welcome">
+    <p>you re welcome to my portfolio page</p>
+</div>
+    </div>
+
+
+    <script>
+    let extracted = decodeURIComponent(window.location.search);
+    extracted = extracted.substring(1);
+
+
+
+    console.log(extracted)
+    </script>
+</body>
+</html>
