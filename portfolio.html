@@ -1,35 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-    <style>
-    #container{
-        background-image: url('bgFoto.jpg');
-        background-repeat:round;
-        height:400px;
-        ;
-        
+  <style>
+    #container {
+      background-image: url("bgFoto.jpg");
+background-size: cover;
+background-repeat: round;
+      height: 400px;
+      background-attachment: fixed;
+      position: relative;
     }
-    </style>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>home page</title>
-</head>
-<body>
-    <div id="container">
-<div class="welcome">
-    <p>you re welcome to my portfolio page</p>
-</div>
+
+    header {
+  background: repeating-linear-gradient(red, yellow);
+  height: 5.5em;
+  width: 100%;
+  text-align: right;
+  position: relative;
+
+    }
+    header nav{
+        display: inline;
+        margin-left: .5em;
+        margin-right: .9em;
+        position: absolute;
+        right:40px;
+        top: .9em;
+        ;
+  }
+  header nav a {
+text-decoration: none;
+  }
+    #container .welcome {
+      position: absolute;
+      top: 30%;
+      left: 38%;
+      animation: toggle 4s infinite;
+      
+    }
+    @keyframes toggle {
+        from{
+            background-color: blue;
+        }
+        to{
+            background-color: lightblue;
+        }
+    }
+    #container button{
+        position: absolute;
+        top: 80%;
+        left:35%;
+        width: 20%;
+        height: 3em;
+        border-radius: 20px;
+      
+          }
+
+
+  </style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>portfolio</title>
+  </head>
+  <body>
+    <div class="over-all-container">
+      <header>
+        <div class="ta">
+            <nav>
+                <a href="#">
+                    home
+                </a>
+                <nav>
+                        <a href="#">
+                            about
+                        </a>
+                        <nav>
+                                <a href="#">
+                                   portfolio
+                                </a>
+                                    
+            </nav>
+          <cite id="topArea"></cite>
+        </div>
+      </header>
+      <div id="container">
+        <div class="welcome">
+          <p>you re welcome to my portfolio page</p>
+        </div>
+        <a href="#port"><button>get started</button></a>
+      </div>
+      <article>
+<h2>about me</h2>
+<p>i go by the name chime chibuike princewill, am the kind of person that is very optimistic and always looks forward to euthusiam stage of life. i current in learnFactory
+   academy on the path of development, believing  that one day i will be among the best programmers
+   that not only develop personal application but as well to develop application that support
+   and enhance our society at large. moreso, am very friendly to all and a goal getter!!!
+ </p>
+ <h2>project in learnFactory</h2>
+ <p>
+   it was on the 21<sup>th</sup> october 2019, i arrived to the learnFactory firm which is located at aba in abia state. My coming to learnFactory is base on the expansionn of weathers on development which from the day i started receiving lectures till now it has indeed been a happy and well expected experience... 
+  </p>
+   <p>
+     prior to now i have been seeing virtual(online) and have proper interaction with the internet but have never got to know how all that is been displayed and been very interctive accross the globe by thank god to learnFactory who has taken it upon them self to let me not only knowing how all those my internet user page is been displayed but also teaching me how to create a web page with the <mark>semantic html5 and pure javascript</mark> enabling a proper adding of content with html5 tags like <cite>header, section, nav, footer tags</cite> and more other tags to work with on the body of my page. while i was still thinking and feeling amazed on how i was enable to add text content to a web browser  they told me that <q>this is just serverd me a taste of the web</q> and guess what happens afterwards, they came again with another power tool which known as <mark><abbr title="cascading stylesheet">css</abbr></mark> which plays a great role in the proper styling of a web content; <cite>coloring, positioning, font size, decorations on the tags and more and more.</cite>
+    </p>
+<p>
+  currently i am being asked to create a responsive web page that have user input and get the user input and append it to the content, i was also asked to add my picture and make it a background image and adding of links that navigates to different sections of my page... <br>
+  guest what! i just did that... smiles. <br> so tell me is development not beautiful? am sure it is, join me and make the world and easy one.... 
+</p>
+</article>
+   <section >
+     please always look out for more of my practice as days comes by.
+     For the code you can visit my github account <a href=""></a>
+      </section>
     </div>
-
-
     <script>
-    let extracted = decodeURIComponent(window.location.search);
-    extracted = extracted.substring(1);
+      let extracted = decodeURIComponent(window.location.search);
+      extracted = extracted.substring(1);
 
+      function nameData(nameData) {
+        let personData = document.getElementById("topArea");
+        let personDataForWelcomeNote = document.querySelector(".welcome");
+        personData.innerText = nameData;
+        personDataForWelcomeNote.innerText += " " + nameData;
+      }
+      nameData(extracted);
 
-
-    console.log(extracted)
+      console.log(extracted);
     </script>
-</body>
+  </body>
 </html>
