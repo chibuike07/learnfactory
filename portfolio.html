@@ -16,7 +16,8 @@
     #contentBody {
       margin-top: 0px;
     }
-    #contentBody p {
+    #contentBody p,
+    h2 {
       padding: 0.3em;
     }
 
@@ -27,20 +28,23 @@
       text-align: right;
       position: relative;
     }
-    header nav{
+    header nav {
       text-align: left;
       position: absolute;
       top: 40%;
-      left:5%;
-      transform: translate(-50%, );
+      left: 5%;
+      transform: translate(-50%);
       box-sizing: border-box;
     }
     header nav a {
-      padding-right: 20px;
+      padding-right: 2.9em;
       text-decoration: none;
       color: black;
       font-size: x-large;
       box-sizing: border-box;
+    }
+    header nav a:hover {
+      color: #ffe7d1;
     }
 
     header cite {
@@ -49,9 +53,10 @@
       left: 80%;
       font-size: x-large;
       box-sizing: border-box;
-      padding-right: .4em;
-      margin-right: .3em;
-      transform: translate(-80%, -50%);
+      padding-right: 0.4em;
+      margin-right: 0.3em;
+      margin-left: 1.9em;
+      transform: translate(-80%, -30%);
     }
     #container {
       background-image: repeating-linear-gradient(
@@ -97,6 +102,8 @@
       transform: translate(-50%, -80%);
       background: repeating-linear-gradient(#396362, #4b8e8d);
       margin-bottom: 0px;
+      text-decoration-line: none;
+      cursor: pointer;
     }
 
     article {
@@ -147,6 +154,18 @@
       background: repeating-linear-gradient(#396362, #4b8e8d);
       font-size: larger;
     }
+    #image img {
+      width: 150px;
+      float: left;
+      border-radius: 50%;
+    }
+    aside{
+      float:right;
+      
+    }
+    .portfolio{
+      clear: both;
+    }
   </style>
   <head>
     <meta charset="UTF-8" />
@@ -172,6 +191,10 @@
       </div>
       <div id="contentBody">
         <article>
+          <div id="image">
+            <img src="bgFoto.jpg" alt="" />
+          </div>
+          <aside>
           <h2 id="about">about me</h2>
           <p>
             i go by the name chime chibuike princewill, am the kind of person
@@ -182,6 +205,8 @@
             to develop application that support and enhance our society at
             large. moreso, am very friendly to all and a goal getter!!!
           </p>
+        </aside>
+        <div class="portfolio">
           <h2 id="portfolio">project in learnFactory</h2>
           <p>
             it was on the 21<sup>th</sup> october 2019, i arrived to the
@@ -223,6 +248,7 @@
             so tell me is development not beautiful? am sure it is, join me and
             make the world and easy one....
           </p>
+        </div>
         </article>
         <section>
           <p>
