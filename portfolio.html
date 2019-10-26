@@ -10,47 +10,54 @@ padding: 0px;
 /* font-family: 'Lora', serif; */
 font-family: 'Oxygen', sans-serif;
     }
-    #contentBody{
-    padding: .5em;
-    }
+    #contentBody {
+  margin-top: 0px;
+    }    
     #contentBody p{
-padding: .3em;
+    padding: .3em;
     }
-    #container {
+#container {
       background-image:repeating-linear-gradient(170deg,rgba(43, 21, 21, 0.452),rgba(0, 0, 0, 0.911)), url("bgFoto.jpg");
       background-size: cover;
       background-repeat:round;
       height: 500px;
       background-attachment: fixed;
       position: relative;
+      
     }
 
-    header {
-  background: repeating-linear-gradient(red, yellow);
+header {
+  background: repeating-linear-gradient(#396362, #4b8e8d);
   height: 5.5em;
   width: 100%;
   text-align: right;
   position: relative;
 
-    }
+}
     header nav{
-        display: inline;
+        display:flex;
         margin-left: .5em;
         margin-right: .9em;
         position: absolute;
-        right:40px;
-        top: .9em;
-        
-  }
+        right:100px;
+                      
+}
 header nav a {
 text-decoration: none;
-position: relative;
-  }
-  header nav cite{
+color: #000;
+position: absolute;
+right: 700px;
+top: 1.3em;
+font-size: x-large;
+}
+header nav a:hover{
+color: red;
+}
+  header cite{
   position: absolute;
-  top: 40px;
-  left: 70px;
-  font-size:larger;
+  top: 38px;
+  left: 1100px;
+  font-size:xx-large;
   transform: translate(-30px, -10px);
   }
     #container .welcome {
@@ -58,20 +65,18 @@ position: relative;
       top: 25%;
       left: 45%;
       height: 5em;
-      animation: toggle 4s infinite;
+      animation: toggle 3s infinite;
       padding: 55px .4em 0px;
       font-size: larger;
       transform: translate(-35%, -30%);
       border-radius: .8em;
       overflow: hidden;
-      
-
-      
     }
     
     @keyframes toggle {
         from{
-            background-color: blue;
+          background: repeating-linear-gradient(#396362, #4b8e8d);
+;
         }
         to{
             font-size:30px;        
@@ -85,20 +90,25 @@ position: relative;
         height: 3em;
         border-radius: 20px;
         transform: translate(-50%, -80%);
-      
+        background: repeating-linear-gradient(#396362, #4b8e8d);
+        margin-bottom: 0px; 
+ 
           }
 
     article{
-      background-image: repeating-linear-gradient(#ccc, grey);
+      background-image: repeating-linear-gradient(#ffe7d1, #ffe7d1);
       position: relative;
+      margin-top: 0px;
+
     }
     article p:last-child{
+      
       margin-bottom: 0px;
       padding-bottom: .5em;
     }
 
     section{
-      background-image: repeating-linear-gradient(rgb(88, 78, 78), white);
+      background-image: repeating-linear-gradient(#ffe7d1,#ffe7d1);
       height: 50px;
       position: relative;
       margin-bottom: 0px;
@@ -111,8 +121,8 @@ position: relative;
       text-decoration: none;
     }
     footer{
-      background: black;
-      color: white;
+      background:#396362;
+      color: #000;
       height: 5em;
       position: relative;
     }
@@ -132,7 +142,8 @@ position: relative;
       top: 600px;
       border-radius:50%;
       width: 100px;
-
+      background: repeating-linear-gradient(#396362, #4b8e8d);
+font-size: larger;
 
     }
 
@@ -148,19 +159,21 @@ position: relative;
     <div class="over-all-container">
       <header id="header">
          <nav>
+           <a href="#portfolio">
+              portfolio
+           </a>
+           <nav>
+             <a href="#about">
+               about
+              </a>
+              <nav>
                 <a href="#">
-                    home
-                </a>
-                <nav>
-                        <a href="#about">
-                            about
-                        </a>
-                        <nav>
-                                <a href="#portfolio">
-                                   portfolio
-                                </a>
-                                    
+                home
+               </a>
+                
             </nav>
+            </nav>
+         </nav>
           <cite id="topArea"></cite>
         
       </header>
