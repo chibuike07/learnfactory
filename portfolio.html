@@ -16,6 +16,13 @@
     #contentBody {
       margin-top: 0px;
     }
+    header img{
+      width: 50px;
+      position: relative;
+      right: 60em;
+      top: .9em;
+     display: none; 
+    }
     #contentBody p,
     h2 {
       padding: 0.3em;
@@ -27,7 +34,7 @@
 
     header {
       background: repeating-linear-gradient(#396362, #4b8e8d);
-      height: 5.5em;
+      height: 9em;
       width: 100%;
       text-align: right;
       position: relative;
@@ -37,14 +44,16 @@
       position: absolute;
       top: 40%;
       left: 5%;
+      display: flex;
       box-sizing: border-box;
+      
     }
     header nav a {
       padding-right: 2.9em;
       text-decoration: none;
       color: black;
       font-size: x-large;
-      box-sizing: border-box;
+    
     }
     header nav a:hover {
       color: #ffe7d1;
@@ -56,7 +65,7 @@
       top: 50%;
       left: 80%;
       font-size: x-large;
-      box-sizing: border-box;
+      
       padding-right: 0.4em;
       margin-right: 0.3em;
       margin-left: 1.9em;
@@ -105,6 +114,7 @@
       width: 20%;
       height: 3em;
       font-size: 1.3em;
+      color: #fff;
       border-radius: 20px;
       transform: translate(-50%, -80%);
       background: repeating-linear-gradient(#396362, #4b8e8d);
@@ -125,7 +135,7 @@
 
     section {
       background-image: repeating-linear-gradient(#ffe7d1, #ffe7d1);
-      height: 50px;
+      height: 70px;
       position: relative;
       margin-bottom: 0px;
       padding-top: 0.5em;
@@ -153,15 +163,16 @@
     }
     .top button {
       position: fixed;
-      bottom: -4px;
+      bottom: 10px;
       right: 10px;
-      top: 600px;
+      top: 550px;
       border-radius: 50%;
       width: 100px;
       background: repeating-linear-gradient(#396362, #4b8e8d);
       font-size: larger;
       outline: none;
       cursor: pointer;
+      color: #fff;
     }
     #image img {
       width: 150px;
@@ -184,7 +195,69 @@
       top: .9em;
       padding-top: 2.8em;
     }
-    
+    @media only screen and (max-width:500px){
+      header{
+        width: 100%;
+      }
+      header nav{
+        position: relative;
+        top:.5em;
+     
+      }
+      header a{
+        display: none;
+      }
+      header nav a:nth-child(1){
+      position: relative;
+      bottom:3px
+      }
+      header nav a:nth-child(2){
+        position:relative;
+        top: .8em;
+        right: 5.8em;
+        padding-top: .4em;
+      }
+      header nav a:nth-child(3){
+      position: relative;
+      top: .6em;
+    }
+    header cite{
+      color: yellow;
+      position: absolute;
+      top: .9em;
+      left: 9.3em;
+
+    }
+    #container button{
+      width: 7.4em;
+    }
+    .abt{
+      padding-bottom: 2em;
+    }
+    .abt span {
+      padding-left: .2em;
+      color: blue;
+      
+    }
+#portfolio{
+  position: absolute;
+  top: 15.3em;
+  
+}
+.top button{
+ top: 26.3em; 
+ height: 3.0em;
+ width: 2.9em;
+ right: 1.3em;
+
+}
+header img{
+  display: block;
+  position: relative;
+  left: 1.1em;
+}
+
+    }
   </style>
   <head>
     <meta charset="UTF-8" />
@@ -192,13 +265,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>portfolio</title>
   </head>
-  <body onload="hiddenOnLoad(contentBody)">
+  <body onload="hiddenOnLoa(contentBody)">
     <div class="over-all-container">
       <header id="header">
+        <img src="menu icon.png" alt="" id="menu-img">
         <nav>
-          <a href="#">Home</a>
-          <a href="#about">About</a>
-          <a href="#portfolio">Portfolio</a>
+          <a href="#" class="navbar">Home</a>
+          <a href="#about" class="navbar">About</a>
+          <a href="#portfolio" class="navbar">Portfolio</a>
         </nav>
         <cite id="topArea"></cite>
       </header>
@@ -223,11 +297,9 @@
             programmers that not only develop personal application but as well
             to develop application that support and enhance our society at
             large. Moreso, am very friendly to all and 
-            a goal getter! Lastly feel free to hook me up on mobile <address>08169543479</address>
+            a goal getter! Lastly feel free to hook me up on mobile <span>08169543479</span>
           </p>
         </div>
-        
-        
           <h2 id="portfolio">project in learnFactory</h2>
           <p>
             it was on the 21<sup>th</sup> october 2019, i arrived to the
@@ -313,6 +385,14 @@
       let hiddenOnLoad = ((content) => {
         content.style.display = 'none';
       })
+let bar = document.getElementById('menu-img');
+bar.addEventListener('click', menuBar)
+function  menuBar(){
+   alert('click')
+   let navbar = document.querySelector('.navbar')
+   navbar.style.display = 'block';
+   console.log(navbar)
+}
     </script>
   </body>
 </html>
