@@ -20,6 +20,10 @@
     h2 {
       padding: 0.3em;
     }
+    #contentBody #about{
+      margin-top: 0px;
+    }
+
 
     header {
       background: repeating-linear-gradient(#396362, #4b8e8d);
@@ -33,7 +37,6 @@
       position: absolute;
       top: 40%;
       left: 5%;
-      transform: translate(-50%);
       box-sizing: border-box;
     }
     header nav a {
@@ -45,6 +48,7 @@
     }
     header nav a:hover {
       color: #ffe7d1;
+      cursor:progress;
     }
 
     header cite {
@@ -56,6 +60,7 @@
       padding-right: 0.4em;
       margin-right: 0.3em;
       margin-left: 1.9em;
+      color:  #ffe7d1;
       transform: translate(-80%, -30%);
     }
     #container {
@@ -78,6 +83,7 @@
       height: 5em;
       animation: toggle 3s infinite;
       padding: 55px 0.4em 0px;
+      color:  #ffe7d1;
       font-size: larger;
       transform: translate(-35%, -30%);
       border-radius: 0.8em;
@@ -98,11 +104,12 @@
       left: 50%;
       width: 20%;
       height: 3em;
+      font-size: 1.3em;
       border-radius: 20px;
       transform: translate(-50%, -80%);
       background: repeating-linear-gradient(#396362, #4b8e8d);
       margin-bottom: 0px;
-      text-decoration-line: none;
+      outline: none;
       cursor: pointer;
     }
 
@@ -153,19 +160,31 @@
       width: 100px;
       background: repeating-linear-gradient(#396362, #4b8e8d);
       font-size: larger;
+      outline: none;
+      cursor: pointer;
     }
     #image img {
       width: 150px;
       float: left;
       border-radius: 50%;
+      padding: .5em;
+      position: relative;
+      top: 1.7em;
     }
-    aside{
-      float:right;
-      
+    .abt{
+      position: relative;
+      top: .8em;
     }
-    .portfolio{
-      clear: both;
+    #about{
+      position: relative;
+      top: .9em;
     }
+    #portfolio{
+      position: relative;
+      top: .9em;
+      padding-top: 2.8em;
+    }
+    
   </style>
   <head>
     <meta charset="UTF-8" />
@@ -173,40 +192,42 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>portfolio</title>
   </head>
-  <body>
+  <body onload="hiddenOnLoad(contentBody)">
     <div class="over-all-container">
       <header id="header">
         <nav>
-          <a href="#">home</a>
-          <a href="#about">about</a>
-          <a href="#portfolio">portfolio</a>
+          <a href="#">Home</a>
+          <a href="#about">About</a>
+          <a href="#portfolio">Portfolio</a>
         </nav>
         <cite id="topArea"></cite>
       </header>
       <div id="container">
         <div class="welcome">
-          <p>you re welcome to my portfolio page</p>
+          <p>You re welcome to my portfolio page</p>
         </div>
-        <button onclick="display()">get started</button>
+        <button onclick="display()">Get started</button>
       </div>
       <div id="contentBody">
         <article>
           <div id="image">
             <img src="bgFoto.jpg" alt="" />
           </div>
-          <aside>
+          <div class="abt">
           <h2 id="about">about me</h2>
           <p>
-            i go by the name chime chibuike princewill, am the kind of person
-            that is very optimistic and always looks forward to euthusiam stage
-            of life. i current in learnFactory academy on the path of
+            I go by the name Chime Chibuike Princewill, i am 
+            very optimistic and always looks forward to euthusiam stage
+            of life. I am current in learnFactory academy on the path of
             development, believing that one day i will be among the best
             programmers that not only develop personal application but as well
             to develop application that support and enhance our society at
-            large. moreso, am very friendly to all and a goal getter!!!
+            large. Moreso, am very friendly to all and 
+            a goal getter! Lastly feel free to hook me up on mobile <address>08169543479</address>
           </p>
-        </aside>
-        <div class="portfolio">
+        </div>
+        
+        
           <h2 id="portfolio">project in learnFactory</h2>
           <p>
             it was on the 21<sup>th</sup> october 2019, i arrived to the
@@ -248,7 +269,7 @@
             so tell me is development not beautiful? am sure it is, join me and
             make the world and easy one....
           </p>
-        </div>
+        
         </article>
         <section>
           <p>
@@ -288,6 +309,10 @@
           contentBody.style.display = "none";
         }
       };
+
+      let hiddenOnLoad = ((content) => {
+        content.style.display = 'none';
+      })
     </script>
   </body>
 </html>
