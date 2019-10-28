@@ -15,6 +15,8 @@
     }
     #contentBody {
       margin-top: 0px;
+      display: none;
+      
     }
     header img{
       width: 50px;
@@ -195,9 +197,15 @@
       top: .9em;
       padding-top: 2.8em;
     }
-    @media only screen and (max-width:500px){
+    header #menu-img{
+      display: none;
+    }
+    @media only screen and (max-width:550px){
       header{
         width: 100%;
+      }
+      header #menu-img{
+        display: block;
       }
       header nav{
         position: relative;
@@ -224,7 +232,6 @@
     header cite{
       color: yellow;
       position: absolute;
-      top: .9em;
       left: 9.3em;
 
     }
@@ -233,28 +240,47 @@
     }
     .abt{
       padding-bottom: 2em;
+      
     }
     .abt span {
       padding-left: .2em;
       color: blue;
-      
     }
 #portfolio{
-  position: absolute;
-  top: 15.3em;
-  
+  position: relative;
+  margin-top: .0em;
+  top: -70px;
 }
 .top button{
  top: 26.3em; 
  height: 3.0em;
  width: 2.9em;
- right: 1.3em;
+ right: 1.0em;
 
 }
 header img{
   display: block;
   position: relative;
   left: 1.1em;
+  top:3.2em;
+}
+article .after-about{
+  position: relative;
+  top: -80px;
+}
+#contentBody section{
+  position: relative;
+  top: -50px;
+  padding-bottom: 20px;
+  
+}
+footer {
+position: relative;
+top: -49px;
+}
+
+footer p{
+margin-top: 1.5em;
 }
 
     }
@@ -265,14 +291,14 @@ header img{
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>portfolio</title>
   </head>
-  <body onload="hiddenOnLoa(contentBody)">
+  <body>
     <div class="over-all-container">
       <header id="header">
         <img src="menu icon.png" alt="" id="menu-img">
         <nav>
-          <a href="#" class="navbar">Home</a>
-          <a href="#about" class="navbar">About</a>
-          <a href="#portfolio" class="navbar">Portfolio</a>
+          <a href="#" class="navbar" id="navbar">Home</a>
+          <a href="#about" class="navbar" id="navbar">About</a>
+          <a href="#portfolio" class="navbar" id="navbar">Portfolio</a>
         </nav>
         <cite id="topArea"></cite>
       </header>
@@ -300,7 +326,8 @@ header img{
             a goal getter! Lastly feel free to hook me up on mobile <span>08169543479</span>
           </p>
         </div>
-          <h2 id="portfolio">project in learnFactory</h2>
+        <h2 id="portfolio">project in learnFactory</h2>
+          <div class="after-about">
           <p>
             it was on the 21<sup>th</sup> october 2019, i arrived to the
             learnFactory firm which is located at aba in abia state. My coming
@@ -341,7 +368,7 @@ header img{
             so tell me is development not beautiful? am sure it is, join me and
             make the world and easy one....
           </p>
-        
+        </div>
         </article>
         <section>
           <p>
@@ -382,17 +409,8 @@ header img{
         }
       };
 
-      let hiddenOnLoad = ((content) => {
-        content.style.display = 'none';
-      })
-let bar = document.getElementById('menu-img');
-bar.addEventListener('click', menuBar)
-function  menuBar(){
-   alert('click')
-   let navbar = document.querySelector('.navbar')
-   navbar.style.display = 'block';
-   console.log(navbar)
-}
+      
+ 
     </script>
   </body>
 </html>
