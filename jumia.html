@@ -5,8 +5,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>jumia header view cloning</title>
+    <style>
+    *{
+        padding: 0px;
+        margin: 0px;
+    }
+    header{
+        width: 100%;
+    }
+    header img{
+        width: 1.5em;
+        margin: .5em;
+    }
+    header > a{
+        position: relative;
+        color:orangered;
+        top: -14px;
+        text-decoration: none;
+    }
+    section {
+        width: 70%;
+        position: relative;
+    }
+    header nav img{
+       background-color: yellow;
+       width: 60px;
+       position: relative;
+       left: 20em;
+       top: -2.9em;
+    }
+    header nav a{
+        color:#ccc;
+        opacity: 2em;
+        position: relative;
+        left: 18em;
+        top: -3.6em;
+        text-decoration: none;
+        padding-right:25px;
+        font-size: large;
+        text-transform: uppercase;
+    }
+    header nav a:nth-child(2):hover,:last-child:hover{
+        color: coral;
+    }
+    header nav a:nth-child(3):hover,:nth-child(4):hover{
+        color: blue;
+    }
+    header nav a:nth-child(5):hover{
+        color: goldenrod;
+    }
+
+    
+    section{
+        width: 100%;
+    }
+    section img{
+        width: 9em;
+        position: relative;
+        top: -3.5em;
+
+    }
+    section form input[type='search']{
+        position: relative;
+        left:15em;
+        top: -9em;
+        width: 40.5em;
+        height: 3em;
+        border-radius: 5px;
+        padding-left: 40px;
+        outline: none;
+    }
+    section form input[type='button']{
+        position: relative;
+        width: 7.7em;
+        height: 2.9em;
+        left: 15.5em;
+        top: -9.1em;
+        border-radius: 5px;
+        background:coral;
+        outline: none;
+        text-transform: uppercase;
+    }
+    section img:last-child{
+        width: 20px;
+        position: relative;
+        left: 13.5em;
+        top: -9.3em;
+    }
+.img-link img{
+    width: 25px;
+}
+.img-link{
+position: relative;
+left: 55em;
+top: -11.3em;
+}
+.img-link img{
+    margin-right:2.5em ;
+}
+.img-link a{
+position: relative;
+right: 1.5em;
+top: -.5em;
+text-decoration: none;
+}
+.img-link a:hover{
+color: coral;
+}
+.img-link img:hover{
+width: 30px;
+}
+    </style>
 </head>
 <body>
-    
+    <header>
+        <img src="star.jpeg" alt="star image">
+        <a href="#">sell on jumia</a>
+        <nav>
+            <img src="cart-image.jpeg" alt="cart-image">
+            <a href="#">food</a>
+            <a href="#">travel</a>
+            <a href="#">flight</a>
+            <a href="#">part</a>
+            <a href="#">one</a>
+        </nav>
+    </header>
+    <section>
+        <img src="cart-image.jpeg" alt="cart-image">
+        <form action="#">
+            <input type="search" name="search" id="search" placeholder="search products, brands and categories">
+            <input type="button" name="btn" id="btn" value="search">
+        </form>
+        <img src="search-icon.png" alt="search-icon">
+    </section>
+    <nav class="img-link">
+        <img src="login.png" alt="login image"> <a href="">login</a>
+        <img src="askme.png" alt="help image"><a href="">help</a>
+        <img src="cart.png" alt="cart"><a href="">cart</a>
+
+    </nav>
 </body>
 </html>
