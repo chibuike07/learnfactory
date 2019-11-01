@@ -5,11 +5,13 @@ header {
   height: 15vh;
   background-color: indigo;
   color: white;
+  overflow: hidden;
 }
 header h1{
   margin-top:25px;
   margin-left: 20px;
   animation: toggle-color 3s infinite;
+  text-decoration: overline;
 }
 @keyframes toggle-color  {
   from{
@@ -63,7 +65,7 @@ section aside {
   background-color: darkgrey;
   box-sizing: border-box;
   padding: 15px;
-
+overflow: hidden;
 }
 section .art {
   margin: 0px 30px 0px 10px;
@@ -74,4 +76,51 @@ section .art {
   height: 300px;
   padding: 15px;
   
+}
+.container h1{
+  animation: fall 2s infinite;
+}
+@keyframes fall {
+  from{
+    margin-top:0px
+  }
+  to{
+    margin-top:10px;
+  }
+}
+@media only screen and (max-width:500px){
+  
+  section .art{
+    height: 300px;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  section aside{
+    height: 300px;
+    
+  }
+.container h1{
+  line-height: 50px;
+  box-sizing: border-box;
+  
+}
+header ul{
+  text-align: 
+  
+}
+header{
+  display: flex;
+  flex-wrap: wrap;
+  height: 30vh;
+  justify-content: space-between;
+  box-sizing: border-box;
+  
+}
+header ul li{
+  display: inline-block;
+  box-sizing: border-box;  
+
+}
+
+
 }

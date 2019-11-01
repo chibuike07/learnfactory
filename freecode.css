@@ -1,0 +1,79 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+header{
+background-color:rgb(10, 10, 48);
+    text-align: center;
+    line-height: 1.9;
+    
+}
+header img{
+    position: relative;
+    top: .3em;
+    width: 180px;
+    background-attachment: fixed;
+}
+.container{
+    width: 100%;
+    font-family: monospace;
+}
+.container h1, p{
+    text-align: center;
+    line-height: 2;
+}
+.container h1{
+    /* color: red; */
+    font-size: 3em;
+    font: bolder;
+    margin: 1.4em 0px 0px 0px;
+}
+.container p:nth-child(2){
+/* color: red; */
+margin: 20px;
+font-size: 20px;
+font-weight: 50px;
+/* padding:0px 250px 0px 250px; */
+/* box-sizing: border-box; */
+}
+
+.h4-group{
+    text-align: center;
+    margin: auto;
+    line-height: 2.8;
+    width: 50%;
+    font-style: inherit;
+    box-sizing: border-box;
+}
+.h4-group a{
+text-decoration: none;
+}
+.container .h4-group h4{
+    text-align: center;
+    color: #000;
+    border: 3px solid #000;
+    background-color:#ccc;
+    font-size: x-large;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    margin-top:.5em;
+    
+}
+.container .h4-group h4:hover{
+background-color:rgb(10, 10, 48);
+color: #fff;
+}
+footer{
+    margin-top:2em;
+    text-align: center;
+}
+footer a{
+    color: #000;
+}
+footer a:hover{
+    text-decoration: none;
+    background-color: #ccc;
+}
+footer p{
+    font-size: 1.1em;
+}
