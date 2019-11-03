@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>learn flex</title>
+    <link rel="stylesheet" href="flex.css" />
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      h1{
+          margin: auto;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+
+        border: 2px solid;
+        background-color: cadetblue;
+        height: 75px;
+        color: crimson;
+      }
+      .h4ground {
+        display: flex;
+        margin: auto;
+      }
+      .h4ground h4 {
+        padding: 10px;
+        margin: auto;
+      }
+      
+      
+      section {
+        display: flex;
+        justify-content: space-between;
+        /* when working with row use flex direction column and align-item */
+        /* flex-direction: column; */
+        /* for align-items to work we placed the immediate child to flex-grow to it */
+        align-items: center;
+        /* having all children in same line */
+        /* align-content: center; */
+
+        flex-wrap: wrap;
+        
+      }
+      article {
+        border: 2px solid black;
+        width: 100px;
+      }
+      #a, #b, #c, #d, #e, #f, #g, #h{
+          flex-grow: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>flex box tutorial</h1>
+      <div class="h4ground">
+        <h4>home</h4>
+        <h4>contact</h4>
+        <h4>about</h4>
+        <h4>service</h4>
+      </div>
+    </header>
+    <section>
+      <article id="a">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam ullam,
+        itaque sint veniam voluptates quis, delectus inventore eos commodi
+        consectetur facere magni rerum? Dolore vel voluptatibus temporibus
+        provident magnam veritatis.
+      </article>
+      <article id="b">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam ullam,
+        itaque sint veniam voluptates quis, delectus inventore eos commodi
+        consectetur facere magni rerum? Dolore vel voluptatibus temporibus
+        provident magnam veritatis.
+      </article>
+      <article id="c">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam ullam,
+        itaque sint veniam voluptates quis, delectus inventore eos commodi
+        consectetur facere magni rerum? Dolore vel voluptatibus temporibus
+        provident magnam veritatis.
+      </article>
+      <article id="d">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam ullam,
+        itaque sint veniam voluptates quis, delectus inventore eos commodi
+        consectetur facere magni rerum? Dolore vel voluptatibus temporibus
+        provident magnam veritatis.
+      </article>
+      <article id="e">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam ullam,
+        itaque sint veniam voluptates quis, delectus inventore eos commodi
+        consectetur facere magni rerum? Dolore vel voluptatibus temporibus
+        provident magnam veritatis.
+      </article>
+      <article id="f">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam ullam,
+        itaque sint veniam voluptates quis, delectus inventore eos commodi
+        consectetur facere magni rerum? Dolore vel voluptatibus temporibus
+        provident magnam veritatis.
+      </article>
+      <article id="g">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam ullam,
+        itaque sint veniam voluptates quis, delectus inventore eos commodi
+        consectetur facere magni rerum? Dolore vel voluptatibus temporibus
+        provident magnam veritatis.
+      </article>
+      <article id="h">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam ullam,
+        itaque sint veniam voluptates quis, delectus inventore eos commodi
+        consectetur facere magni rerum? Dolore vel voluptatibus temporibus
+        provident magnam veritatis.
+      </article>
+      <article id="i">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam ullam,
+        itaque sint veniam voluptates quis, delectus inventore eos commodi
+        consectetur facere magni rerum? Dolore vel voluptatibus temporibus
+        provident magnam veritatis.
+      </article>
+      <article id="j">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam ullam,
+        itaque sint veniam voluptates quis, delectus inventore eos commodi
+        consectetur facere magni rerum? Dolore vel voluptatibus temporibus
+        provident magnam veritatis.
+      </article>
+    </section>
+  </body>
+</html>

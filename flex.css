@@ -37,10 +37,11 @@ a {
   color: white;
   font-size: larger;
 }
-a:hover, a:active{
-  color: darkcyan;
+a:hover{
+  color: yellow;
 
 }
+
 div{
   
   background-color: rgba(150, 049, 150, 0.4);
@@ -78,7 +79,7 @@ section .art {
   
 }
 .container h1{
-  animation: fall 2s infinite;
+  /* animation: fall 2s infinite; */
 }
 @keyframes fall {
   from{
@@ -104,10 +105,7 @@ section .art {
   box-sizing: border-box;
   
 }
-header ul{
-  text-align: 
-  
-}
+
 header{
   display: flex;
   flex-wrap: wrap;
@@ -116,11 +114,18 @@ header{
   box-sizing: border-box;
   
 }
-header ul li{
-  display: inline-block;
-  box-sizing: border-box;  
-
+header ul {
+  display: flex;    
+  }
+header h1{
+  position: absolute;
 }
-
+header a{
+/* display: flex; */
+float: right;
+margin-right:7px ;
+margin-left: 20px;
+}
+ 
 
 }
