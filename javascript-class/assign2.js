@@ -15,14 +15,14 @@ function isStrings(strs) {
 
 isStrings("hello");
 
-let original = 'a,b,c,d,e,f,g,h';
-
-let h  = (str) => {
-  let r = original.split('');
-  let splitStr = str.split('');
-  let error = splitStr.filter(item => )
-} 
-
+let original = "a,b,c,d,e,f,g,h";
+let h = str => {
+  let r = original.split("");
+  let splitStr = str.split("");
+  let error = splitStr.filter(item => !r.includes(item));
+  console.log(`error ${error.length}/ ${str.length}` );
+};
+h("chibuike");
 function datas() {
   let nameData = [
     {
