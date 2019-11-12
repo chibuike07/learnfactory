@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>array learning</title>
+  </head>
+  <body>
+    <script>
+      let array = ["joe", "math", "male", "female", 23];
+      //   console.log(array[0]);/
+
+      let arr = [1, 2, 3, [" a", "b", "c"], [" ur work"]];
+      let r = arr
+        .toString()
+        .split(",")
+        .join("");
+      for (a of r) {
+        console.log(a);
+      }
+      console.log(r);
+    </script>
+  </body>
+</html>

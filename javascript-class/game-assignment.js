@@ -1,4 +1,4 @@
-// let userName = prompt("add ur name", "");
+let userName = prompt("add ur name", "");
 
 let object = {
   holdUserName: "",
