@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <textarea id="tex" onkeyup="countWord()" style="width:90vw; height:50vh; padding: 10px;"></textarea>
+
+    <p id="txt"></p>
+<span id="wods"></span><br>
+<span id="let"></span>
+
+    <script>
+      let p = document.getElementById("txt");
+      let spanWod = document.getElementById("wods");
+      let spanLet = document.getElementById("let");
+      function countWord() {
+      let inp = document.getElementById("tex");
+      let holdInp = inp.value.trim().split(/\s+/g)
+      let holdWodCount = inp.value.trim().split(/\s*/g)
+      p.innerText = holdInp;
+      spanWod.innerText = 'words count = ' + holdInp.length
+      spanLet.innerText = ' letter count = ' + holdWodCount.length
+    
+      }
+    </script>
+  </body>
+</html>

@@ -45,7 +45,7 @@
         border-radius: 5px;
         outline: none;
       }
-     
+
       .cont .inp {
         display: flex;
         justify-content: space-around;
@@ -85,7 +85,11 @@
     <p id="1"></p>
     <p id="2"></p>
     <p id="3"></p>
-    <script src="game-assignment.js"></script>
+
+    <input type="number" name="inp" id="22" />
+    <button onclick="num(inp4.value)">click</button>
+    <!-- <script src="game-assignment.js"></script> -->
+    <script src="clas.js"></script>
     <script>
       let inp = document.querySelector("#words");
       function fromBack() {
@@ -133,7 +137,7 @@
         for (count = input; count > 1; count--) {
           result *= count;
 
-          console.log(result);
+          // console.log(result);
         }
       }
 
@@ -145,7 +149,6 @@
       //   return input * recursion(input - 1);
       //   // console.log(result);
       // }
-
       // recursion(6);
     </script>
   </body>

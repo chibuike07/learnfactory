@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  background-color: white;
+  color: #666;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  text-rendering: optimizeLegibility;
+}
+header {
+  height: 95vh;
+  background-color: red;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("librarybg4.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+}
+.nav-content img {
+  display: block;
+  width: 10%;
+  height: 2%;
+  padding: 2%;
+  align-self: center;
+  position: relative;
+  left: 40%;
+transform: translate(-50);
+  
+}
+.nav-content img:hover{
+    opacity: 0.3;
+}
+.nav-content .main-nav {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  align-self: center;
+  margin: 7%;
+}
+.nav-content .main-nav li {
+  margin: 5%;
+}
+.nav-content .main-nav li a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+.nav-content .main-nav li a:hover{
+    border-bottom: 2px solid #e67e22;
+    padding-bottom: 13px;
+    font-size: xx-large;
+}
+header .h1{
+    display: flex;
+    color: #fff;
+    height: 45vh;
+    justify-content: center;
+}
+header h1{
+    align-self: center;
+}
+.header-btn{
+    text-align: center;
+    
+}
+header h1::first-letter{
+    font-size: 100px;
+    color: #e67e22;
+    text-transform: uppercase;
+}
+.header-btn .btn{
+    border-radius: 12px;
+    border: 2px solid #e67e22;
+    margin: 2%;
+}
+.header-btn a{
+    text-decoration: none;
+    padding: 1%;
+}
+
+.header-btn .btn-show{
+    background-color: #e67e22;
+    color: #fff;
+}
+.header-btn .btn-hide{
+    color: #e67e22;
+}
+.header-btn .btn-hide:hover{
+background-color: #e67e22;
+color: #fff;
+
+}

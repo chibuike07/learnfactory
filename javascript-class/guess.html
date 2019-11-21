@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  .hide{
+background-color: green;
+display: none;
+  }
+  </style>
+</head>
+<body>
+  <div id="wel">
+    <h1>Welcome to the number game</h1>
+    <h3>Choose a number from 1 to 10</h3>
+    <button onclick="hideWelcome()" type="submit">play</button>
+  </div>
+  <div class="hide">
+    <div>
+      <input type= "number"  id="input1"/>
+      <button onclick="gameTerms()" type="submit" id="sub">submit</button>
+    </div> <br></br>
+    <p id= "para">Congratulations</p>
+    <button onclick="gameEnd()" type="submit">End</button>
+    <button onclick="replay()" type="submit">replay</button>
+  </div>
+  
+  <script src="sixtus.js" type="text/javascript"></script>
+</body>
+</html>
