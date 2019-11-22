@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" placeholder="student score">
+    <title>average score</title placeholder="expected score">
+</head>
+<body>
+    <input type="text" name="" id="1" placeholder="student course">
+    <input type="number" name="" id="2" placeholder="student score">
+    <input type="number" name="" id="3" placeholder="expected score">
+    <button onclick="cal()">check</button>
+
+<div>
+    <cite></cite>
+</div>
+<script>
+let course = document.getElementById('1');
+let score = document.getElementById('2');
+let expectedScore = document.getElementById('3');
+let cite = document.querySelector('cite')
+
+function cal(){
+let cosV = course.value;
+let scoV = score.value;
+let expsV = expectedScore.value;
+let cont = '';
+let result = parseFloat(scoV) / parseFloat(expsV) * 100;
+let flat = Math.round(result)
+
+if(flat <= 39){cont = 'F'}
+else if(flat <= 49){cont = 'D'}
+else if(flat <= 59){cont = 'C'}
+else if(flat <= 69){cont = 'B'}
+else if(flat <= 100){cont = 'A'}
+cite.innerText = ('grade = ' + cont + ' in ' + cosV + ' you score ' + flat + '%')
+
+
+}
+</script>
+</body>
+</html>
