@@ -32,10 +32,13 @@
     </table>
 
     <p></p>
+    <cite></cite>
     
     <script>
       let table = document.querySelector("table");
       table.setAttribute("border", "3");
+    let  p = document.querySelector("p");
+     let  cite = document.querySelector('cite');
         array = [];
       avgarr = [];
       let tbody = document.querySelector("tbody");
@@ -48,9 +51,6 @@
           agric: document.getElementById("ag").value,
           art: document.getElementById("art").value
         };
-        tts = document.getElementById("tc");
-        avg = document.getElementById("avg");
-        p = document.querySelector("p");
         let tr = table.insertRow(1);
         let cell1 = tr.insertCell(0);
         let cell2 = tr.insertCell(1);
@@ -90,8 +90,9 @@
        avgarr.push(average)
        if(avgarr.length == 5){
          let avgMax = Math.max(...avgarr);
+         cite.innerText = avgMax;
          console.log(avgMax)
-         console.log(result)
+        //  console.log(result)
          let objarr = Array.of(input);
          let result = objarr.filter(n => n)
        }
