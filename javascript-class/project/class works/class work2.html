@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>student grade</title>
+  </head>
+  <body>
+    <form id="f">
+      <input type="text" name="nm" id="nm" placeholder="Name" />
+      <input type="number" name="en" id="en" placeholder="English" />
+      <input type="number" name="mt" id="mt" placeholder="Math" />
+      <input type="number" name="ec" id="ec" placeholder="Econs" />
+      <input type="number" name="ag" id="ag" placeholder="Agric" />
+      <input type="number" name="art" id="art" placeholder="art" />
+      <!-- <input type="number" name="avg" id="avg" placeholder="average"/> -->
+    </form>
+    <button onclick="studentGrades()">click</button>
+    <table id="table">
+      <thead>
+        <th>Name</th>
+        <th>English</th>
+        <th>Maths</th>
+        <th>Econs</th>
+        <th>Agric</th>
+        <th>Art</th>
+        <th>Total Score</th>
+        <th>Average</th>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+
+    <p></p>
+    
+    <script>
+      let table = document.querySelector("table");
+      table.setAttribute("border", "3");
+        array = [];
+      avgarr = [];
+      let tbody = document.querySelector("tbody");
+      function studentGrades() {
+        let input = {
+          nam: document.getElementById("nm").value,
+          eng: document.getElementById("en").value,
+          math: document.getElementById("mt").value,
+          econs: document.getElementById("ec").value,
+          agric: document.getElementById("ag").value,
+          art: document.getElementById("art").value
+        };
+        tts = document.getElementById("tc");
+        avg = document.getElementById("avg");
+        p = document.querySelector("p");
+        let tr = table.insertRow(1);
+        let cell1 = tr.insertCell(0);
+        let cell2 = tr.insertCell(1);
+        let cell3 = tr.insertCell(2);
+        let cell4 = tr.insertCell(3);
+        let cell5 = tr.insertCell(4);
+        let cell6 = tr.insertCell(5);
+        let cell7 = tr.insertCell(6);
+        let cell8 = tr.insertCell(7);
+
+        cell1.innerHTML = input.nam;
+        cell2.innerHTML = input.eng;
+        cell3.innerHTML = input.math;
+        cell4.innerHTML = input.econs;
+        cell5.innerHTML = input.agric;
+        cell6.innerHTML = input.art;
+
+        tbody.appendChild(tr);
+        let allScore =
+          parseFloat(cell2.innerHTML) +
+          parseFloat(cell3.innerHTML) +
+          parseFloat(cell4.innerHTML) +
+          parseFloat(cell5.innerHTML) +
+          parseFloat(cell6.innerHTML);
+
+        cell7.innerHTML = allScore;
+        let count = 0;
+        array.push(allScore);
+        for (let i = 0; i < array.length; i++) {
+          count += array[i];
+        }
+        let tblLen = table.rows.length - 1;
+        p.innerText = count;
+        let average = parseFloat(cell7.innerHTML) / 5;
+        cell8.innerHTML = average;
+        // console.log(average);
+       avgarr.push(average)
+       if(avgarr.length == 5){
+         let avgMax = Math.max(...avgarr);
+         console.log(avgMax)
+         console.log(result)
+         let objarr = Array.of(input);
+         let result = objarr.filter(n => n)
+       }
+       console.log(avgarr)
+        
+      }
+    </script>
+  </body>
+</html>
