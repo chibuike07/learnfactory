@@ -33,16 +33,23 @@
 
     <p></p>
     <cite></cite>
+    <strong></strong>
     
     <script>
       let table = document.querySelector("table");
       table.setAttribute("border", "3");
     let  p = document.querySelector("p");
      let  cite = document.querySelector('cite');
-        array = [];
-      avgarr = [];
+     let  strong = document.querySelector('strong');
+     
+      let  array = [];
+      let avgarr = [];
+      let inpArr = [];
+      console.log()
+
       let tbody = document.querySelector("tbody");
       function studentGrades() {
+      
         let input = {
           nam: document.getElementById("nm").value,
           eng: document.getElementById("en").value,
@@ -60,7 +67,7 @@
         let cell6 = tr.insertCell(5);
         let cell7 = tr.insertCell(6);
         let cell8 = tr.insertCell(7);
-
+inpArr.push(input)
         cell1.innerHTML = input.nam;
         cell2.innerHTML = input.eng;
         cell3.innerHTML = input.math;
@@ -70,34 +77,75 @@
 
         tbody.appendChild(tr);
         let allScore =
-          parseFloat(cell2.innerHTML) +
-          parseFloat(cell3.innerHTML) +
-          parseFloat(cell4.innerHTML) +
-          parseFloat(cell5.innerHTML) +
-          parseFloat(cell6.innerHTML);
+          Number(cell2.innerHTML) +
+          Number(cell3.innerHTML) +
+          Number(cell4.innerHTML) +
+          Number(cell5.innerHTML) +
+          Number(cell6.innerHTML);
 
         cell7.innerHTML = allScore;
+        input.tot = allScore;
+        console.log(input.tot)
         let count = 0;
+
+let sub = document.getElementById('en');
+          let mt = document.getElementById('mt');
+          let ec = document.getElementById('ec');
+          let ag = document.getElementById('ag');
+          let art = document.getElementById('art');
+          
+          if(cell2.innerHTML == '' ){
+          cell2.innerHTML = 0;
+          console.log( ' u got zero in ' + sub.placeholder);
+          strong.innerHTML = ( ' u got zero in ' + sub.placeholder)
+        return false
+          }else if(cell3.innerHTML == ''){
+            cell3.innerHTML = 0;
+            console.log( 'u got zero in ' + mt.placeholder);
+          strong.innerHTML = ( 'u got zero in ' + mt.placeholder)
+          return false
+
+          }else if(cell4.innerHTML == ''){
+            cell4.innerHTML = 0;
+            console.log( 'u got zero in ' + ec.placeholder);
+          strong.innerHTML = ( 'u got zero in ' + ec.placeholder)
+          return false
+          }else if(cell5.innerHTML == ''){
+            cell5.innerHTML = 0;
+            console.log( 'u got zero in ' + ag.placeholder);
+            strong.innerHTML = ( 'u got zero in ' + ag.placeholder)
+          return false
+
+          }else if(cell6.innerHTML == ''){
+            cell6.innerHTML = 0;
+            console.log( 'u got zero in ' + art.placeholder);
+          strong.innerHTML = ( 'u got zero in ' + art.placeholder)
+          return false
+          }
+
         array.push(allScore);
         for (let i = 0; i < array.length; i++) {
           count += array[i];
         }
-        let tblLen = table.rows.length - 1;
+        console.log(inpArr)
         p.innerText = count;
         let average = parseFloat(cell7.innerHTML) / 5;
         cell8.innerHTML = average;
-        // console.log(average);
+        input.avg = average
+        console.log(input.avg);
        avgarr.push(average)
        if(avgarr.length == 5){
          let avgMax = Math.max(...avgarr);
          cite.innerText = avgMax;
          console.log(avgMax)
-        //  console.log(result)
-         let objarr = Array.of(input);
-         let result = objarr.filter(n => n)
+         let avgMaxScorer = inpArr.filter(n => n.avg == avgMax)
+         console.log(avgMaxScorer)
        }
-       console.log(avgarr)
-        
+       console.log(avgarr);
+  
+          // let a = inpArr.filter(r => r != Number);
+          
+          
       }
     </script>
   </body>
