@@ -5,8 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>student grade</title>
+    <style>
+      *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      html{
+
+        text-rendering: optimizeLegibility;
+      }
+      .header{
+        display: flex;
+        justify-content:center;
+        flex-direction: row;
+        text-transform: capitalize;
+        background: cornflowerblue;
+        height: 12vh;
+        padding: 2%;
+        color: #fff;
+      }
+      .header h2{
+        margin: auto;
+      }
+      .cont{
+        background-color: rgb(217, 223, 235);
+        overflow-y: scroll;
+        overflow-x: scroll;
+      }
+      
+      form {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        width: 50%;
+        margin: auto;
+        padding-top: 5%;
+      }
+      form input {
+        line-height: 3;
+        margin-top: 3%;
+        outline-color:blue ;
+        border: none;
+      }
+      table{
+        width: 70%;
+        margin: auto;
+        height: 30%;
+        border-color:cornflowerblue ;
+        color: blue;
+}
+::placeholder{
+padding-left:20px ;
+text-transform: capitalize;
+}
+.btn{
+  display: flex;
+  justify-content: center;
+}
+button{
+  width: 50%;
+  margin: 3% 0%;
+  height: 5vh;
+  background-color: cornflowerblue;
+  border-radius:20px ;
+  color: #fff;
+  outline: none;
+  text-transform: capitalize;
+}
+
+.dom-holder{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+  padding: 2%;
+  margin-left: 2%;
+}
+.dom-holder cite, strong, p{
+  margin-top: 3%;
+
+}
+
+
+    </style>
   </head>
   <body>
+
+    <div class="header"> 
+      <h2>input your student datas</h2>
+    </div>
+    <div class="cont">
     <form id="f">
       <input type="text" name="nm" id="nm" placeholder="Name" />
       <input type="number" name="en" id="en" placeholder="English" />
@@ -16,7 +104,10 @@
       <input type="number" name="art" id="art" placeholder="art" />
       <!-- <input type="number" name="avg" id="avg" placeholder="average"/> -->
     </form>
+    <div class="btn">
     <button onclick="studentGrades()">click</button>
+    <button onclick="reld()">refresh</button>
+    </div>
     <table id="table">
       <thead>
         <th>Name</th>
@@ -30,26 +121,27 @@
       </thead>
       <tbody id="tbody"></tbody>
     </table>
-
-    <p></p>
-    <cite></cite>
-    <strong></strong>
-    
+<div class="dom-holder">
+  
+  <p></p>
+  <cite></cite>
+  <strong></strong>
+</div>
+</div>
     <script>
       let table = document.querySelector("table");
       table.setAttribute("border", "3");
-    let  p = document.querySelector("p");
-     let  cite = document.querySelector('cite');
-     let  strong = document.querySelector('strong');
-     
-      let  array = [];
+      let p = document.querySelector("p");
+      let cite = document.querySelector("cite");
+      let strong = document.querySelector("strong");
+
+      let array = [];
       let avgarr = [];
       let inpArr = [];
-      console.log()
+      console.log();
 
       let tbody = document.querySelector("tbody");
       function studentGrades() {
-      
         let input = {
           nam: document.getElementById("nm").value,
           eng: document.getElementById("en").value,
@@ -67,7 +159,7 @@
         let cell6 = tr.insertCell(5);
         let cell7 = tr.insertCell(6);
         let cell8 = tr.insertCell(7);
-inpArr.push(input)
+        inpArr.push(input);
         cell1.innerHTML = input.nam;
         cell2.innerHTML = input.eng;
         cell3.innerHTML = input.math;
@@ -85,67 +177,76 @@ inpArr.push(input)
 
         cell7.innerHTML = allScore;
         input.tot = allScore;
-        console.log(input.tot)
+        console.log(input.tot);
         let count = 0;
 
-let sub = document.getElementById('en');
-          let mt = document.getElementById('mt');
-          let ec = document.getElementById('ec');
-          let ag = document.getElementById('ag');
-          let art = document.getElementById('art');
-          
-          if(cell2.innerHTML == '' ){
-          cell2.innerHTML = 0;
-          console.log( ' u got zero in ' + sub.placeholder);
-          strong.innerHTML = ( ' u got zero in ' + sub.placeholder)
-        return false
-          }else if(cell3.innerHTML == ''){
-            cell3.innerHTML = 0;
-            console.log( 'u got zero in ' + mt.placeholder);
-          strong.innerHTML = ( 'u got zero in ' + mt.placeholder)
-          return false
-
-          }else if(cell4.innerHTML == ''){
-            cell4.innerHTML = 0;
-            console.log( 'u got zero in ' + ec.placeholder);
-          strong.innerHTML = ( 'u got zero in ' + ec.placeholder)
-          return false
-          }else if(cell5.innerHTML == ''){
-            cell5.innerHTML = 0;
-            console.log( 'u got zero in ' + ag.placeholder);
-            strong.innerHTML = ( 'u got zero in ' + ag.placeholder)
-          return false
-
-          }else if(cell6.innerHTML == ''){
-            cell6.innerHTML = 0;
-            console.log( 'u got zero in ' + art.placeholder);
-          strong.innerHTML = ( 'u got zero in ' + art.placeholder)
-          return false
-          }
 
         array.push(allScore);
         for (let i = 0; i < array.length; i++) {
           count += array[i];
         }
-        console.log(inpArr)
-        p.innerText = count;
+        console.log(inpArr);
+        p.innerText = 'Sum of total score is ' +  count;
         let average = parseFloat(cell7.innerHTML) / 5;
         cell8.innerHTML = average;
-        input.avg = average
+        input.avg = average;
         console.log(input.avg);
-       avgarr.push(average)
-       if(avgarr.length == 5){
-         let avgMax = Math.max(...avgarr);
-         cite.innerText = avgMax;
-         console.log(avgMax)
-         let avgMaxScorer = inpArr.filter(n => n.avg == avgMax)
-         console.log(avgMaxScorer)
-       }
-       console.log(avgarr);
-  
-          // let a = inpArr.filter(r => r != Number);
-          
-          
+        avgarr.push(average);
+        if (avgarr.length == 5) {
+          let avgMax = Math.max(...avgarr);
+          cite.innerText = 'the higest average ' + avgMax;
+          console.log(avgMax);
+          let avgMaxScorer = inpArr.filter(n => n.avg == avgMax);
+          console.log(avgMaxScorer);
+        }
+        let sub = document.getElementById("en");
+        let mt = document.getElementById("mt");
+        let ec = document.getElementById("ec");
+        let ag = document.getElementById("ag");
+        let art = document.getElementById("art");
+
+        if (cell2.innerHTML == "") {
+          cell2.innerHTML = 0;
+          console.log(" u got zero in " + sub.placeholder);
+          strong.innerHTML = " u got zero in " + sub.placeholder;
+          return false;
+        } else if (cell3.innerHTML == "") {
+          cell3.innerHTML = 0;
+          console.log("u got zero in " + mt.placeholder);
+          strong.innerHTML = "u got zero in " + mt.placeholder;
+          return false;
+        } else if (cell4.innerHTML == "") {
+          cell4.innerHTML = 0;
+          console.log("u got zero in " + ec.placeholder);
+          strong.innerHTML = "u got zero in " + ec.placeholder;
+          return false;
+        } else if (cell5.innerHTML == "") {
+          cell5.innerHTML = 0;
+          console.log("u got zero in " + ag.placeholder);
+          strong.innerHTML = "u got zero in " + ag.placeholder;
+          return false;
+        } else if (cell6.innerHTML == "") {
+          cell6.innerHTML = 0;
+          console.log("u got zero in " + art.placeholder);
+          strong.innerHTML = "u got zero in " + art.placeholder;
+          return false;
+        }
+        console.log(avgarr);
+
+        // let a = inpArr.filter(r => r != Number);
+
+        if(table.rows.length -1 == 5){
+          document.getElementById('en').disabled = true;
+          document.getElementById('mt').disabled = true;
+          document.getElementById('ec').disabled = true;
+          document.getElementById('ag').disabled = true;
+          document.getElementById('art').disabled = true;
+          document.querySelector('button').disabled = true;
+          alert('the have reach the maximum input for this table')
+        }
+      }
+      function reld(){
+        location.reload();
       }
     </script>
   </body>
