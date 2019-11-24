@@ -85,8 +85,9 @@
       strong,
       p {
         margin-top: 1%;
+        display: block;
       }
-      footer{
+      footer {
         display: flex;
         background: cornflowerblue;
         color: #fff;
@@ -95,14 +96,17 @@
         line-height: 1;
         flex-direction: column;
         justify-content: center;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
       }
-      footer p{
+      footer p {
         text-transform: capitalize;
-    
       }
-      footer cite{
-        
+      @media only screen and (max-width: 570px) {
+        .header h2 {
+          height: 8vh;
+          margin-top: 3%;
+        }
       }
     </style>
   </head>
@@ -146,7 +150,7 @@
     </div>
 
     <footer>
-      <cite>copy right &copy 24<sup>th</sup> Nov, 2019</cite><br>
+      <cite>copy right &copy 24<sup>th</sup> Nov, 2019</cite><br />
       <p>HobbyLuv concept</p>
     </footer>
     <script>
@@ -227,8 +231,12 @@
         avgarr.push(average);
         if (avgarr.length == 5) {
           let avgMax = Math.max(...avgarr);
-          cite.innerText = "the higest average " + avgMax;
           let avgMaxScorer = inpArr.filter(n => n.avg == avgMax);
+          let namMax = avgMaxScorer.map(n => n.nam);
+          console.log(avgMaxScorer);
+          console.log(namMax);
+          cite.innerText =
+            namMax + " scored the higest average above all with " + avgMax;
         }
         let sub = document.getElementById("en");
         let mt = document.getElementById("mt");
@@ -243,36 +251,18 @@
             n.agric == "" ||
             n.art == ""
         );
-
-        if (cell2.innerHTML == "") {
-          cell2.innerHTML = 0;
-          // console.log(input.nam + " u got zero in " + sub.placeholder);
-          strong.innerHTML = input.nam + " u got zero in " + sub.placeholder;
-          return false;
-        } else if (cell3.innerHTML == "") {
-          cell3.innerHTML = 0;
-          // console.log(input.nam + " u got zero in " + mt.placeholder);
-          strong.innerHTML = input.nam + " u got zero in " + mt.placeholder;
-          return false;
-        } else if (cell4.innerHTML == "") {
-          cell4.innerHTML = 0;
-          // console.log(input.nam + " u got zero in " + ec.placeholder);
-          strong.innerHTML = input.nam + " u got zero in " + ec.placeholder;
-          return false;
-        } else if (cell5.innerHTML == "") {
-          cell5.innerHTML = 0;
-          // console.log(input.nam + " u got zero in " + ag.placeholder);
-          strong.innerHTML = input.nam + " u got zero in " + ag.placeholder;
-          return false;
-        } else if (cell6.innerHTML == "") {
-          cell6.innerHTML = 0;
-          // console.log(input.nam + " u got zero in " + art.placeholder);
-          strong.innerHTML = input.nam + " u got zero in " + art.placeholder;
-          return false;
+        let li = document.createElement("li");
+        let f = x.map(key => {
+          return Object.keys(key).filter(keys => key[keys] == "");
+        });
+        for (i of f) {
+          console.log(i);
         }
-        // console.log(avgarr);
-
+        // console.log(i)
+        li.innerText = input.nam + " u were absence in " + i;
+        strong.appendChild(li);
         if (table.rows.length - 1 == 5) {
+          document.getElementById("nam").disabled = true;
           document.getElementById("en").disabled = true;
           document.getElementById("mt").disabled = true;
           document.getElementById("ec").disabled = true;
@@ -281,7 +271,7 @@
           document.querySelector("button").disabled = true;
           alert("the have reach the maximum input for this table");
         }
-        document.querySelector('form').reset();
+        document.querySelector("form").reset();
       }
       function reld() {
         location.reload();
