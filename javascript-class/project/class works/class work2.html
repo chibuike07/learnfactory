@@ -155,17 +155,17 @@
     </footer>
     <script>
       let table = document.querySelector("table");
-      table.setAttribute("border", "3");
+      table.setAttribute("border", "3");      
       let p = document.querySelector("p");
       let cite = document.querySelector("cite");
       let strong = document.querySelector("strong");
 
       let allScoreArray = [];
       let avgarr = [];
-      let inpArr = [];
-
+      
       let tbody = document.querySelector("tbody");
       function studentGrades() {
+        let inpArr = [];
         let input = {
           nam: document.getElementById("nm").value,
           eng: document.getElementById("en").value,
@@ -230,6 +230,13 @@
         input.grad = grade;
         avgarr.push(average);
         if (avgarr.length == 5) {
+      let g = avgarr.sort((a,b)=> {
+          return a - b;
+        })
+          console.log(g)
+          // for(i in inpArr){
+
+          // }
           let avgMax = Math.max(...avgarr);
           let avgMaxScorer = inpArr.filter(n => n.avg == avgMax);
           let namMax = avgMaxScorer.map(n => n.nam);
@@ -255,14 +262,20 @@
         let f = x.map(key => {
           return Object.keys(key).filter(keys => key[keys] == "");
         });
+        console.log(...f)
         for (i of f) {
           console.log(i);
+          if(i.length >= 2 ){
+            let q = i.join(' & ');
+          li.innerText = input.nam + " u were absence in " + q;
+          strong.appendChild(li);
+            console.log(q)
+          }
         }
-        // console.log(i)
-        li.innerText = input.nam + " u were absence in " + i;
-        strong.appendChild(li);
+        
+        // console.log(i)z
         if (table.rows.length - 1 == 5) {
-          document.getElementById("nam").disabled = true;
+          document.getElementById("nm").disabled = true;
           document.getElementById("en").disabled = true;
           document.getElementById("mt").disabled = true;
           document.getElementById("ec").disabled = true;
