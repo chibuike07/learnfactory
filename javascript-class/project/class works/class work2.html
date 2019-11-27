@@ -225,7 +225,7 @@
         } else if (flat <= 100) {
           grade = "A";
         }
-
+let arrcompArr = [];
         cell9.innerHTML = grade;
         input.grad = grade;
         avgarr.push(average);
@@ -234,8 +234,12 @@
           return a - b;
         })
           console.log(g)
+          // arrcompArr.push(g)
           // for(i in inpArr){
-
+          //   console.log(inpArr[i])
+          //   let v = inpArr.filter(inpArr[i].avg)
+            
+          //   console.log(v)
           // }
           let avgMax = Math.max(...avgarr);
           let avgMaxScorer = inpArr.filter(n => n.avg == avgMax);
@@ -270,6 +274,9 @@
           li.innerText = input.nam + " u were absence in " + q;
           strong.appendChild(li);
             console.log(q)
+          }else{
+            li.innerText = input.nam + " u were absence in " + i;
+          strong.appendChild(li);
           }
         }
         
