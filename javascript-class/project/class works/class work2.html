@@ -146,6 +146,7 @@
         <p></p>
         <cite></cite>
         <strong></strong>
+        <b id="pos"></b>
       </div>
     </div>
 
@@ -159,10 +160,9 @@
       let p = document.querySelector("p");
       let cite = document.querySelector("cite");
       let strong = document.querySelector("strong");
-
       let allScoreArray = [];
       let avgarr = [];
-      
+      let datArr = [];
       let tbody = document.querySelector("tbody");
       function studentGrades() {
         let inpArr = [];
@@ -185,6 +185,7 @@
         let cell8 = tr.insertCell(7);
         let cell9 = tr.insertCell(8);
         inpArr.push(input);
+        datArr.push(input)
         cell1.innerHTML = input.nam;
         cell2.innerHTML = input.eng;
         cell3.innerHTML = input.math;
@@ -229,20 +230,24 @@ let arrcompArr = [];
         cell9.innerHTML = grade;
         input.grad = grade;
         avgarr.push(average);
-        if (avgarr.length == 5) {
-      let g = avgarr.sort((a,b)=> {
-          return a - b;
+
+        if (avgarr.length == 2) {
+          let g = datArr.sort((a,b)=> {
+          return a.avg - b.avg;       
         })
+        let val = document.getElementById('pos');
+        let me = document.createElement('li');
           console.log(g)
-          // arrcompArr.push(g)
-          // for(i in inpArr){
-          //   console.log(inpArr[i])
-          //   let v = inpArr.filter(inpArr[i].avg)
-            
-          //   console.log(v)
-          // }
+          // let li = document.createElement('li')
+          if(g){
+            let f = g.map(n => n.nam + ' ' +  n.avg);
+            for(i in f){
+              val.append(f[i]);
+            }
+            console.log(f)
+          }
           let avgMax = Math.max(...avgarr);
-          let avgMaxScorer = inpArr.filter(n => n.avg == avgMax);
+          let avgMaxScorer = datArr.filter(n => n.avg == avgMax);
           let namMax = avgMaxScorer.map(n => n.nam);
           console.log(avgMaxScorer);
           console.log(namMax);
@@ -254,7 +259,7 @@ let arrcompArr = [];
         let ec = document.getElementById("ec");
         let ag = document.getElementById("ag");
         let art = document.getElementById("art");
-        let x = inpArr.filter(
+        let emptyCellObj = inpArr.filter(
           n =>
             n.eng == "" ||
             n.math == "" ||
@@ -262,21 +267,20 @@ let arrcompArr = [];
             n.agric == "" ||
             n.art == ""
         );
-        let li = document.createElement("li");
-        let f = x.map(key => {
+        let liElement = document.createElement("li");
+        let emptyCellObjKeys = emptyCellObj.map(key => {
           return Object.keys(key).filter(keys => key[keys] == "");
         });
-        console.log(...f)
-        for (i of f) {
-          console.log(i);
-          if(i.length >= 2 ){
-            let q = i.join(' & ');
-          li.innerText = input.nam + " u were absence in " + q;
-          strong.appendChild(li);
-            console.log(q)
+        for (values of emptyCellObjKeys) {
+          console.log(values);
+          if(values.length >= 2 ){
+            let fromTwoValues = values.join(' & ');
+          liElement.innerText = input.nam + " u were absence in " + fromTwoValues;
+          strong.appendChild(liElement);
+            console.log(fromTwoValues)
           }else{
-            li.innerText = input.nam + " u were absence in " + i;
-          strong.appendChild(li);
+            liElement.innerText = input.nam + " u were absence in " + values;
+          strong.appendChild(liElement);
           }
         }
         
