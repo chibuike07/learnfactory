@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>table data</title>
+</head>
+<body>
+    <form id="f">
+        <input type="text" name="nm" id="nm" placeholder="Name" />
+        <input type="number" name="en" id="en" placeholder="English" />
+        <input type="number" name="mt" id="mt" placeholder="Math" />
+        <input type="number" name="ec" id="ec" placeholder="Econs" />
+        <input type="number" name="ag" id="ag" placeholder="Agric" />
+        <input type="number" name="art" id="art" placeholder="art" />
+      </form>
+      <div class="btn">
+        <button onclick="addTableBody();totalScore(); grading()">click</button>
+        <!-- <button onclick="reld()">refresh</button> -->
+      </div>
+      <form action="javascript:;" onsubmit="">
+          <input type="text" name="tex" id="tex" placeholder="add your courses">
+          <input type="button" value="add" onclick="addTableHead(courseInp.value);">
+        </form>
+        <table id="table">
+            <thead id="thead"></thead>
+            <tbody id="tbody"></tbody>
+        </table>
+        <script src="tableData.js"></script>
+    </body>
+</html>

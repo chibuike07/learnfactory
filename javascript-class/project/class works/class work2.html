@@ -231,20 +231,18 @@ let arrcompArr = [];
         input.grad = grade;
         avgarr.push(average);
 
-        if (avgarr.length == 2) {
+        if (avgarr.length == 5) {
           let g = datArr.sort((a,b)=> {
           return a.avg - b.avg;       
         })
         let val = document.getElementById('pos');
         let me = document.createElement('li');
           console.log(g)
-          // let li = document.createElement('li')
+
           if(g){
-            let f = g.map(n => n.nam + ' ' +  n.avg);
-            for(i in f){
-              val.append(f[i]);
-            }
-            console.log(f)
+            let m = g.map(item => `${item.nam} ${item.avg}</br>`).join('')
+          console.log(m)
+          val.innerHTML = m
           }
           let avgMax = Math.max(...avgarr);
           let avgMaxScorer = datArr.filter(n => n.avg == avgMax);
@@ -272,7 +270,6 @@ let arrcompArr = [];
           return Object.keys(key).filter(keys => key[keys] == "");
         });
         for (values of emptyCellObjKeys) {
-          console.log(values);
           if(values.length >= 2 ){
             let fromTwoValues = values.join(' & ');
           liElement.innerText = input.nam + " u were absence in " + fromTwoValues;
@@ -283,8 +280,6 @@ let arrcompArr = [];
           strong.appendChild(liElement);
           }
         }
-        
-        // console.log(i)z
         if (table.rows.length - 1 == 5) {
           document.getElementById("nm").disabled = true;
           document.getElementById("en").disabled = true;
