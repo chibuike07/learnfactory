@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Assign1</title>
+  </head>
+  <body>
+    <form id="f">
+      <input type="text" name="nm" id="nm" placeholder="Name" />
+      <input type="number" name="en" id="en" placeholder="English" />
+      <input type="number" name="mt" id="mt" placeholder="Math" />
+      <input type="number" name="ec" id="ec" placeholder="Econs" />
+      <input type="number" name="ag" id="ag" placeholder="Agric" />
+      <input type="number" name="art" id="art" placeholder="art" />
+    </form>
+    <div class="btn">
+      <button onclick="btn()">click</button>
+      <!-- <button onclick="reld()">refresh</button> -->
+    </div>
+
+    <script>
+      function btn() {
+        //   window.location.replace('assign2.html')
+        let data = {
+          nam: document.getElementById("nm").value,
+          eng: document.getElementById("en").value,
+          math: document.getElementById("mt").value,
+          econs: document.getElementById("ec").value,
+          agric: document.getElementById("ag").value,
+          art: document.getElementById("art").value,
+          avg
+          
+        };
+        console.log(data)
+      }
+    </script>
+  </body>
+</html>

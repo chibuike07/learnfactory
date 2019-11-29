@@ -19,12 +19,11 @@
       let spanLet = document.getElementById("let");
       function countWord() {
       let inp = document.getElementById("tex");
-      let holdInp = inp.value.trim().split(/\s+/g)
-      let holdWodCount = inp.value.trim().split(/\s*/g)
-      p.innerText = holdInp;
-      spanWod.innerText = 'words count = ' + holdInp.length
-      spanLet.innerText = ' letter count = ' + holdWodCount.length
-    
+      let holdInp = inp.value.trim().split(/\s+/g);
+      let holdWodCount = inp.value.trim().split(/\s*/g);
+      p.innerText = `${inp.value}`;
+      spanWod.innerText = 'words count = ' + holdInp.length;
+      spanLet.innerText = ' letter count = ' + holdWodCount.length;
       }
     </script>
   </body>
