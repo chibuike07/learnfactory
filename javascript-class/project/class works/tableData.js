@@ -148,20 +148,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+let spacedCell;
 function emptyCells(arr){
-  let spacedCell;
-  if(table.rows.length - 1 == 2){}
-spacedCell = arr.filter(spaces => {
+  let spac
+  // if(table.rows.length - 1 == 2){
+let spaceedData = document.getElementById("spacedData");
+    spacedCell = arr.filter(spaces => {
       spaces.eng == "" ||
       spaces.math == "" ||
       spaces.econs == "" ||
       spaces.agric == "" ||
       spaces.art == ""
       console.log(spaces)
+      spac = Object.keys(spaces).filter(key => spaces[key] == '');
       
-})
-spac = Object.keys(spacedCell).filter(key => spacedCell[key] == '');
-console.log(spac)
+      spaceedData.innerText = `${spac}\n`
+      console.log(spac)
+    })
+  
 }
 
 // let a = [1, 2, 3, 4, 5].map(n => console.log(n + 1));

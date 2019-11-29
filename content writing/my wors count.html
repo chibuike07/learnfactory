@@ -6,25 +6,96 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
   </head>
+  <style>
+    .all-cont {
+      background-color: purple;
+      color: #fff;
+      height: 100%;
+      font-family:monospaceb;
+    }
+    .cont {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    textarea {
+      margin: 2%;
+      height: 10vh;
+      width: 50%;
+      
+    }
+
+    .txt {
+      width: 90%;
+      background-color: #fff;
+      color: black;
+      background-color: #fff;
+      overflow-y: scroll;
+      height: 20vh;
+    }
+    .txt p{
+      padding: 4%;
+    }
+    .app {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 10%;
+    
+    }
+    .appen{
+      border: 2px solid #fff;
+      padding: 1%;
+      margin: 2%;
+      border-radius: 20px;
+    }
+    h2{
+      text-transform: capitalize;
+      padding: 2%;
+    }
+    footer{
+text-align: center;
+    }
+    ::placeholder{
+      padding: 5px;
+      color: purple;
+    }
+    
+  </style>
   <body>
-    <textarea id="tex" onkeyup="countWord()" style="width:90vw; height:50vh; padding: 10px;"></textarea>
-
-    <p id="txt"></p>
-<span id="wods"></span><br>
-<span id="let"></span>
-
+    <div class="all-cont">
+      <marquee><h2>count your words and characters</h2></marquee>
+      <div class="cont">
+        <textarea id="tex" onkeyup="countWord()" placeholder="write your article..."></textarea>
+        <div class="txt">
+          <p id="txt"></p>
+        </div>
+      </div>
+      <div class="app">
+        <span id="wods" class="appen"></span><br />
+        <span id="let" class="appen"></span>
+      </div>
+      <footer>
+       <h2>all right reserved copyright &copy hobbyluv concept Nov. 2019</h2>
+      </footer>
+    </div>
     <script>
       let p = document.getElementById("txt");
       let spanWod = document.getElementById("wods");
       let spanLet = document.getElementById("let");
+      let textarea = document.querySelector('textarea');
       function countWord() {
-      let inp = document.getElementById("tex");
-      let holdInp = inp.value.trim().split(/\s+/g);
-      let holdWodCount = inp.value.trim().split(/\s*/g);
-      p.innerText = `${inp.value}`;
-      spanWod.innerText = 'words count = ' + holdInp.length;
-      spanLet.innerText = ' letter count = ' + holdWodCount.length;
+        let inp = document.getElementById("tex");
+        let holdInp = inp.value.trim().split(/\s+/g);
+        let holdWodCount = inp.value.trim().split(/\s*/g);
+        p.innerText = `${inp.value}`;
+        spanWod.innerText = `word count => ${holdInp.length}`;
+        spanLet.innerText = ` character count => ${holdWodCount.length}`;
       }
+      document.addEventListener('DOMContentLoaded', function(){
+        spanWod.innerText = 'word count =>'
+        spanLet.innerText = 'character count =>'
+      })
     </script>
   </body>
 </html>
