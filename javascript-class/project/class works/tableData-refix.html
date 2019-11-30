@@ -19,9 +19,9 @@
         <button onclick="addTableBody(); totalScore(); grading(); len(); sortFromHighestToLowest(); emptyCells(array) ">click</button>
         <!-- <button onclick="reld()">refresh</button> -->
       </div>
-      <form action="javascript:;" onsubmit="">
-          <input type="text" name="tex" id="tex" placeholder="add your courses">
-          <input type="button" value="add" onclick="addTableHead(courseInp.value);">
+      <form action="javascript:;" onsubmit="addTableHead(courseInp.value);" id="form">
+          <input type="text" name="tex" id="tex" placeholder="add your courses" >
+          <input type="button" value="add">
         </form>
         <table id="table">
             <thead id="thead"></thead>

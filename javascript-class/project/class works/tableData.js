@@ -33,9 +33,10 @@ function addTableHead(...inp) {
   console.log(inp, co);
   // console.log(inp);
   // return inp;
-if(co == 2){
-  alert('yes')
-}
+// if(co == 2){
+//   alert('yes')
+// }
+document.getElementById('form').reset();
 }
 function addTableBody(...keys) {
   tbody = document.getElementById("tbody");
@@ -148,24 +149,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-let spacedCell;
 function emptyCells(arr){
-  let spac
+  let spacedData = document.getElementById("spacedData");
+  // let spacedCell;
+// let spac;
   // if(table.rows.length - 1 == 2){
-let spaceedData = document.getElementById("spacedData");
-    spacedCell = arr.filter(spaces => {
+   let spacedCell = arr.filter(spaces =>
       spaces.eng == "" ||
       spaces.math == "" ||
       spaces.econs == "" ||
       spaces.agric == "" ||
       spaces.art == ""
-      console.log(spaces)
-      spac = Object.keys(spaces).filter(key => spaces[key] == '');
-      
-      spaceedData.innerText = `${spac}\n`
-      console.log(spac)
-    })
-  
+    
+    )
+    console.log(spacedCell)
+    let spac = spacedCell.map(keys => {
+      return Object.keys(keys).filter(course => keys[course] == '');
+    });
+  console.log(spac)
+  spacedData.textContent = `${spac}`
 }
 
 // let a = [1, 2, 3, 4, 5].map(n => console.log(n + 1));

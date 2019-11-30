@@ -7,11 +7,15 @@
     <title>Document</title>
   </head>
   <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
     .all-cont {
       background-color: purple;
       color: #fff;
       height: 100%;
-      font-family:monospaceb;
+      font-family: monospace;
     }
     .cont {
       display: flex;
@@ -19,11 +23,34 @@
       flex-wrap: wrap;
       align-items: center;
     }
+    .all-cont header {
+      margin: 2%;
+      padding-top: 3%;
+      overflow-y: scroll;
+      height: 13vh;
+    }
+    .all-cont header .menu {
+      width: 50px;
+      height: 1vh;
+      background: #fff;
+      margin-top: 3px;
+    }
+    .all-cont header li {
+      list-style: none;
+    }
+    .all-cont header .list {
+      display: none;
+    }
+    li:hover {
+      background-color: purple;
+      color: #fff;
+    }
+
     textarea {
       margin: 2%;
       height: 10vh;
       width: 50%;
-      
+      outline: none;
     }
 
     .txt {
@@ -34,39 +61,57 @@
       overflow-y: scroll;
       height: 20vh;
     }
-    .txt p{
+    .txt p {
       padding: 4%;
     }
     .app {
       display: flex;
       justify-content: space-around;
       margin-top: 10%;
-    
     }
-    .appen{
+    .appen {
       border: 2px solid #fff;
       padding: 1%;
       margin: 2%;
       border-radius: 20px;
     }
-    h2{
+    h2 {
       text-transform: capitalize;
       padding: 2%;
     }
-    footer{
-text-align: center;
+    footer {
+      text-align: center;
     }
-    ::placeholder{
+    ::placeholder {
       padding: 5px;
       color: purple;
     }
-    
   </style>
   <body>
     <div class="all-cont">
+      <header>
+        <div class="men">
+          <div class="menu"></div>
+          <div class="menu"></div>
+          <div class="menu"></div>
+        </div>
+        <br />
+        <div class="list">
+          <li>limit word</li>
+          <li>background-color</li>
+          <li>save text</li>
+          <li>font-family</li>
+          <li>selction font</li>
+          <li>log out</li>
+        </div>
+      </header>
       <marquee><h2>count your words and characters</h2></marquee>
       <div class="cont">
-        <textarea id="tex" onkeyup="countWord()" placeholder="write your article..."></textarea>
+        <textarea
+          id="tex"
+          oninput="countWord()"
+          placeholder="write your article..."
+        ></textarea>
         <div class="txt">
           <p id="txt"></p>
         </div>
@@ -76,26 +121,41 @@ text-align: center;
         <span id="let" class="appen"></span>
       </div>
       <footer>
-       <h2>all right reserved copyright &copy hobbyluv concept Nov. 2019</h2>
+        <h2>all right reserved copyright &copy hobbyluv concept Nov. 2019</h2>
       </footer>
     </div>
     <script>
       let p = document.getElementById("txt");
       let spanWod = document.getElementById("wods");
       let spanLet = document.getElementById("let");
-      let textarea = document.querySelector('textarea');
+      let textarea = document.querySelector("textarea");
       function countWord() {
         let inp = document.getElementById("tex");
-        let holdInp = inp.value.trim().split(/\s+/g);
-        let holdWodCount = inp.value.trim().split(/\s*/g);
+        let holdWodCount = inp.value.trim().split(/\s+/g);
+        let holdLetCount = inp.value.trim().split(/\s*/g);
         p.innerText = `${inp.value}`;
-        spanWod.innerText = `word count => ${holdInp.length}`;
-        spanLet.innerText = ` character count => ${holdWodCount.length}`;
+        spanWod.innerText = `word count => ${holdWodCount.length}`;
+        spanLet.innerText = ` character count => ${holdLetCount.length}`;
+
+        if (inp.value.trim().split(/\s+/g).length % 10 == 0) {
+          inp.value += "\n";
+        }
       }
-      document.addEventListener('DOMContentLoaded', function(){
-        spanWod.innerText = 'word count =>'
-        spanLet.innerText = 'character count =>'
-      })
+      document.addEventListener("DOMContentLoaded", function() {
+        spanWod.innerText = "word count =>";
+        spanLet.innerText = "character count =>";
+      });
+      let dropDown = document.querySelector("header .men");
+      let list = document.querySelector("header .list");
+      dropDown.addEventListener("click", function() {
+        list.classList.toggle("list");
+        list.style.backgroundColor = "white";
+        list.style.color = "purple";
+        list.style.width = "30%";
+        list.style.padding = "2%";
+        list.style.height = "100px";
+        list.style.zIndex = "4";
+      });
     </script>
   </body>
 </html>
