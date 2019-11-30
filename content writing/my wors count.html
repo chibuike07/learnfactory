@@ -26,8 +26,9 @@
     .all-cont header {
       margin: 2%;
       padding-top: 3%;
-      overflow-y: scroll;
+      /* overflow-y: scroll; */
       height: 13vh;
+      width: 100%;
     }
     .all-cont header .menu {
       width: 50px;
@@ -44,6 +45,9 @@
     li:hover {
       background-color: purple;
       color: #fff;
+    }
+    .inpu {
+      display: none;
     }
 
     textarea {
@@ -97,12 +101,12 @@
         </div>
         <br />
         <div class="list">
-          <li>limit word</li>
-          <li>background-color</li>
-          <li>save text</li>
-          <li>font-family</li>
-          <li>selction font</li>
-          <li>log out</li>
+          <li id="lw">limit word</li>
+          <li id="bc">background-color</li>
+          <li id="st">save text</li>
+          <li id="ff">font-family</li>
+          <li id="sf">selction font</li>
+          <li id="lo">log out</li>
         </div>
       </header>
       <marquee><h2>count your words and characters</h2></marquee>
@@ -129,16 +133,16 @@
       let spanWod = document.getElementById("wods");
       let spanLet = document.getElementById("let");
       let textarea = document.querySelector("textarea");
+      let input = document.getElementById("tex");
       function countWord() {
-        let inp = document.getElementById("tex");
-        let holdWodCount = inp.value.trim().split(/\s+/g);
-        let holdLetCount = inp.value.trim().split(/\s*/g);
-        p.innerText = `${inp.value}`;
+        let holdWodCount = input.value.trim().split(/\s+/g);
+        let holdLetCount = input.value.trim().split(/\s*/g);
+        p.innerText = `${input.value}`;
         spanWod.innerText = `word count => ${holdWodCount.length}`;
         spanLet.innerText = ` character count => ${holdLetCount.length}`;
 
-        if (inp.value.trim().split(/\s+/g).length % 10 == 0) {
-          inp.value += "\n";
+        if (input.value.trim().split(/\s+/g).length % 10 == 0) {
+          input.value += "\n";
         }
       }
       document.addEventListener("DOMContentLoaded", function() {
@@ -147,15 +151,35 @@
       });
       let dropDown = document.querySelector("header .men");
       let list = document.querySelector("header .list");
-      dropDown.addEventListener("click", function() {
+
+      dropDown.addEventListener("click", () => {
         list.classList.toggle("list");
         list.style.backgroundColor = "white";
         list.style.color = "purple";
-        list.style.width = "30%";
         list.style.padding = "2%";
-        list.style.height = "100px";
-        list.style.zIndex = "4";
+        list.style.height = "40vh";
+        list.style.lineHeight = "3";
+        list.style.position = "absolute";
+        list.style.zIndex = "3";
       });
+
+      let lw = document.getElementById("lw");
+      lw.onclick = () => {
+        // alert("click");
+        let inp = document.createElement("input");
+        inp.setAttribute("type", "number");
+        inp.placeholder = "add word length";
+        inp.style.position = "absolute";
+        inp.style.left = "100%";
+        inp.style.top = "7%";
+        inp.style.height = "5vh";
+        list.appendChild(inp);
+      inp.onkeydown = function(){
+        alert('ues')
+        input.value.trim().split(/\s+/g).length = inp.value;
+        if(input.value == inp.value){alert('nine')}
+      }
+      };
     </script>
   </body>
 </html>
