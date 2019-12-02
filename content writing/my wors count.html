@@ -134,6 +134,8 @@
       let spanLet = document.getElementById("let");
       let textarea = document.querySelector("textarea");
       let input = document.getElementById("tex");
+      let texObj = {};
+      let texArray = [];
       // let inp;
       function countWord() {
         let specifiedCount = document.getElementById("specified");
@@ -142,28 +144,33 @@
         p.innerText = `${input.value}`;
         spanWod.innerText = `word count => ${holdWodCount.length}`;
         spanLet.innerText = ` character count => ${holdLetCount.length}`;
-        if (input.value.trim().split(/\s+/g).length  % 11 == 0) {
-          input.value += "\n";
-          return false;
+        input.onkeyup = e => {
+          if (e.keyCode == 13) {
+            e.preventDefault();
+          }
+        };
+        if (input.value.trim().split(/\s+/g).length % 5 == 0) {
+          input.onkeydown = function(e) {
+            if (e.keyCode == 13 && !e.shiftKey) {
+              e.preventDefault();
+            }
+          };
         }
-        if (
-          input.value.trim().split(/\s+/g).length % specifiedCount.innerText ==
-          0
-        ) {
+        if (input.value.trim().split(/\s+/g).length % specifiedCount.innerText == 0) {
           let c = confirm("continue writing");
           if (c == true) {
-            input.readOnly = true;
-          } else {
             input.readOnly = false;
+          } else {
+            input.readOnly = true;
           }
-
           // input.readOnly = true;
         }
       }
-
+      let specifiedCou = document.getElementById("specified");
       document.addEventListener("DOMContentLoaded", function() {
         spanWod.innerText = "word count =>";
         spanLet.innerText = "character count =>";
+        specifiedCou.innerText = 15;
       });
       let dropDown = document.querySelector("header .men");
       let list = document.querySelector("header .list");
@@ -185,6 +192,7 @@
         inp.setAttribute("type", "number");
         inp.setAttribute("id", "inpu");
         inp.placeholder = "add word length";
+        inp.value = 15;
         inp.style.position = "absolute";
         inp.style.left = "100%";
         inp.style.top = "5%";
@@ -223,7 +231,7 @@
         inpBc.oninput = () => {
           screen.style.backgroundColor = inpBc.value;
           list.style.color = inpBc.value;
-          input.classList.toggle('list')
+          input.classList.toggle("list");
         };
       };
 
@@ -248,6 +256,28 @@
         inpFs.oninput = () => {
           p.style.fontSize = inpFs.value + "px";
         };
+      };
+
+      let saveText = document.getElementById("st");
+      // let texArray = [];
+      saveText.onclick = () => {
+        alert("yes");
+        texObj = {
+          text: textarea.value
+        };
+        texArray.push(texObj);
+        console.log(texObj);
+        console.log(texArray);
+
+        if (localStorage.getItem("savedTex") === null) {
+          texArray.push(texObj);
+          localStorage.setItem("savedTex", JSON.stringify(texArray));
+        } else {
+          let newTex = JSON.parse(localStorage.getItem("savedTex"));
+          newTex = [...texObj];
+          localStorage.setItem(JSON.stringify(newTex));
+          console.warn(texArray);
+        }
       };
     </script>
   </body>
