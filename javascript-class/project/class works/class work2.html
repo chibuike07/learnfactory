@@ -55,10 +55,14 @@
         color: blue;
         text-align: center;
       }
-      ::placeholder {
-        padding-left: 20px;
+      input[type="text"] {
+        padding-left: 5%;
         text-transform: capitalize;
       }
+      input[type="number"] {
+        padding-left: 5%;
+      }
+
       .btn {
         display: flex;
         justify-content: center;
@@ -156,7 +160,7 @@
     </footer>
     <script>
       let table = document.querySelector("table");
-      table.setAttribute("border", "3");      
+      table.setAttribute("border", "3");
       let p = document.querySelector("p");
       let cite = document.querySelector("cite");
       let strong = document.querySelector("strong");
@@ -185,7 +189,7 @@
         let cell8 = tr.insertCell(7);
         let cell9 = tr.insertCell(8);
         inpArr.push(input);
-        datArr.push(input)
+        datArr.push(input);
         cell1.innerHTML = input.nam;
         cell2.innerHTML = input.eng;
         cell3.innerHTML = input.math;
@@ -226,23 +230,23 @@
         } else if (flat <= 100) {
           grade = "A";
         }
-let arrcompArr = [];
+        let arrcompArr = [];
         cell9.innerHTML = grade;
         input.grad = grade;
         avgarr.push(average);
 
         if (avgarr.length == 5) {
-          let g = datArr.sort((a,b)=> {
-          return a.avg - b.avg;       
-        })
-        let val = document.getElementById('pos');
-        let me = document.createElement('li');
-          console.log(g)
+          let g = datArr.sort((a, b) => {
+            return a.avg - b.avg;
+          });
+          let val = document.getElementById("pos");
+          let me = document.createElement("li");
+          console.log(g);
 
-          if(g){
-            let m = g.map(item => `${item.nam} ${item.avg}</br>`).join('')
-          console.log(m)
-          val.innerHTML = m
+          if (g) {
+            let m = g.map(item => `${item.nam} ${item.avg}</br>`).join("");
+            console.log(m);
+            val.innerHTML = m;
           }
           let avgMax = Math.max(...avgarr);
           let avgMaxScorer = datArr.filter(n => n.avg == avgMax);
@@ -270,14 +274,15 @@ let arrcompArr = [];
           return Object.keys(key).filter(keys => key[keys] == "");
         });
         for (values of emptyCellObjKeys) {
-          if(values.length >= 2 ){
-            let fromTwoValues = values.join(' & ');
-          liElement.innerText = input.nam + " u were absence in " + fromTwoValues;
-          strong.appendChild(liElement);
-            console.log(fromTwoValues)
-          }else{
+          if (values.length >= 2) {
+            let fromTwoValues = values.join(" & ");
+            liElement.innerText =
+              input.nam + " u were absence in " + fromTwoValues;
+            strong.appendChild(liElement);
+            console.log(fromTwoValues);
+          } else {
             liElement.innerText = input.nam + " u were absence in " + values;
-          strong.appendChild(liElement);
+            strong.appendChild(liElement);
           }
         }
         if (table.rows.length - 1 == 5) {

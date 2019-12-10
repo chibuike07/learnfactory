@@ -30,7 +30,7 @@ function num(n) {
   if (n) {
     for (i = 1; i <= n; i++) {
       arry.push(i);
-      // console.log(i)
+      console.log(i)
     }
   }
   console.log(arry);
