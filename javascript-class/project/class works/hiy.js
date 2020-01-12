@@ -157,13 +157,12 @@ function steps(str) {
       if (count[0] == count[0] + 1) {
         count += arr[a][a];
       }
-        // count = count;
+      // count = count;
     }
   }
   // console.log(count);
   if (count >= 1) {
     // console.log("down the valley " + count);
-    
   } else if (count < 1) {
     count++;
     // console.log("up the mountain " + count);
@@ -180,7 +179,7 @@ steps("DDUUDDUDUUUD");
 function fillElementIntoArray(num, filledValue) {
   let a = [1, 2, 3, 4, 5, 6];
   let b = a.fill(filledValue, num);
-  console.log(b);
+  // console.log(b);
 }
 fillElementIntoArray(3, "pass");
 
@@ -201,15 +200,112 @@ function fillWithGeneratedInteger(start, end) {
   for (i = 0; i < end; i++, start++) {
     arr[i] = start;
   }
-  console.log(arr);
+  // console.log(arr);
 }
 fillWithGeneratedInteger(3, 7);
 fillWithGeneratedInteger(-6, 4);
 fillWithGeneratedInteger(-4, 7);
 
 var str = "chibuike";
-var shuffle = str.split("").sort(function() {
-    return 0.5 - Math.random()
+var shuffle = str
+  .split("")
+  .sort(function() {
+    return 0.5 - Math.random();
   })
   .join("");
-console.log(shuffle)
+// console.log(shuffle)
+
+function countDecimal(...array) {
+  let strConv = String(array)
+    .split(",")
+    .join("");
+  let decimal = parseInt(Math.log(strConv) / Math.log(10));
+  console.log(decimal);
+}
+countDecimal(0, 1, 0, 0, 1, 0, 0);
+countDecimal(0, 0, 0, 1, 0, 0, 1, 0);
+
+function mapDec(...array) {
+  let a = array.map(n => n);
+
+  let b = Math.log(a.join("")) / Math.log(10);
+  // console.log(parseInt(b));
+}
+mapDec(0, 1, 0, 0, 1, 0, 0, 0);
+mapDec(0, 0, 0, 1, 0, 0, 1, 0);
+var x = 0.00195;
+// var x = 0.r100100;
+
+var m = Math.floor(Math.log() / Math.log(10) + 1);
+console.log(m); // outputs 2
+
+function generate(num, string, str) {
+  let count = 0;
+  let strArr = Array.apply(null, Array(num)).map(
+    String.prototype.valueOf,
+    string
+  );
+  let arrConvToStr = String(strArr)
+    .split(",")
+    .join("");
+  let res = arrConvToStr.slice(0, num);
+  // console.log(res);
+  for (let i = 0; i < res.length; i++) {
+    if (!res[i].indexOf(str)) {
+      count++;
+    }
+  }
+  // console.log(count);
+}
+generate(7, "aba", "a");
+// generate(649606239668, "bcbccacaacbbacabccacbccbababbbbabcccbbcbcaccababcabbbaabbcaabbbbbbabcbbcaabacbbacbc", "a");
+
+function repeats(string, num) {
+  let strAr = Array.of(string);
+  let arr = [];
+  let count = 0;
+  strAr.map((n, i) => {
+    // arr.push(n)
+    arr.push(strAr[i]);
+    if (arr.length < num) {
+      arr.length = num;
+      arr.fill(strAr[i], 1);
+    } else {
+      return;
+    }
+  });
+  let c = arr.join("");
+  let res = c.slice(0, num);
+  // console.log(res.length);
+  // document.write(res);
+  // console.log(res.length);
+
+  for (let i = 0; i < res.length; i++) {
+    if (!res[i].indexOf("a")) {
+      count++;
+    }
+  }
+  // console.log(count)
+}
+repeats("aba", 10);
+
+let position = array => {
+  let arr = [1, 2, 3, 4, 5];
+  let empArr = [];
+  let co = 0;
+  array.forEach((element, i) => {
+    console.log(arr.indexOf(element));
+    if (arr.includes(array[i])) {
+      if (arr[i] !== array[i]) {
+        i--;
+        if (arr[i] < array[i]) {
+          co++;
+          empArr.push(array[i]);
+        }
+      }
+    }
+  });
+  console.log(empArr);
+  console.log(co);
+};
+position([2, 1, 5, 3, 4]);
