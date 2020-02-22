@@ -1,0 +1,131 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  border: none;
+}
+p,
+h1,
+h2,
+h3 {
+  margin: 0%;
+}
+.header {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  height: 15vh;
+  width: 100vw;
+  background-color: yellow;
+}
+.menu-icon-div {
+  display: grid;
+  grid-gap: 10px;
+  display: none;
+}
+.menu-icon {
+  border: 2px solid #000;
+  width: 20px;
+}
+#img {
+  max-width: 50px;
+  max-height: 50px;
+  height: auto;
+  width: auto;
+}
+.imgdiv {
+  /* background-color: red; */
+  width: 50px;
+  height: 50px;
+  margin-left: 20%;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button-ul {
+  flex-basis: 60%;
+  /* background-color: seagreen; */
+  margin: auto;
+}
+
+.img-main {
+  flex-basis: 40%;
+  display: flex;
+  /* background-color: sienna; */
+}
+.navbar-sub {
+  margin: auto;
+  width: max-content;
+}
+.div-ul ul {
+  display: inline-flex;
+}
+.div-ul li {
+  list-style: none;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.div-but {
+  margin-left: 10px;
+}
+.div-but button {
+  padding: 10px 15px;
+  border-radius: 20px;
+  width: max-content;
+  font-weight: bold;
+  outline: none;
+}
+.div-but button:hover {
+  opacity: 0.7;
+}
+.div-ul a {
+  text-decoration: none;
+  color: black;
+}
+.div-ul a:hover {
+  border-bottom: 2px solid black;
+  padding-bottom: 10px;
+}
+
+@media (max-width: 500px) {
+  .menu-icon-div {
+    display: block;
+  }
+  header {
+    position: relative;
+    top: 15vh;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .img-main {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .div-ul li a {
+    width: 100%;
+    margin-right: 20vw;
+  }
+  .img-icon-div {
+    display: grid;
+    margin-left: 7vw;
+  }
+  .c {
+    position: absolute;
+    width: 100%;
+    background-color: #ffff006b;
+    opacity: 0.7;
+  }
+  .navbar-sub {
+    flex-direction: column;
+    width: 80%;
+  }
+  .div-ul {
+    /* justify-content: space-between; */
+  }
+  .div-but {
+    margin: 20px 0px;
+  }
+}

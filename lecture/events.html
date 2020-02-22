@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .toggle {
+        color: red;
+      }
+      input {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Click on this text!</h1>
+    <button>click</button>
+    <input type="file" id="focu" placeholder="focus event" />
+    <label for="focu">
+      focus
+    </label>
+
+    <ul>
+      <li>car</li>
+      <li>man</li>
+      <li>world</li>
+    </ul>
+    <button onclick="del()" id="btn1">click</button>
+    <script>
+      function del() {
+        let ul = document.querySelector("ul");
+        ul.remove(ul.selectedIndex);
+      }
+      let h1 = document.querySelector("h1");
+      let btn = document.querySelector("button");
+      function changeText(id) {
+        id = h1;
+        h1.onclick = function() {
+          if (h1.innerHTML == "Click on this text!") {
+            h1.innerHTML = "oops!";
+          } else {
+            h1.innerHTML = "Click on this text!";
+          }
+        };
+      }
+      changeText(this);
+      //   function color() {
+      let inpu = document.querySelector("input");
+      window.onload = function() {
+        // inpu.focus();
+      };
+      //   }
+      //   color();
+
+      let arr = ["1", 2, 3, 4, 5, 6, 7];
+      let c = 6;
+      setInterval(timeSlide, 2000);
+
+      function timeSlide() {
+        c = c + 1;
+        c = c % arr.length;
+        let res = arr[c];
+        // document.write(res);
+      }
+
+      function sortFromHighestToLowest() {
+        let array2 = [2, 4, 5, 3, 1];
+        let r = array2.sort((a, b) => {
+          return b - a;
+        });
+        console.log(r);
+      }
+      sortFromHighestToLowest();
+      function getSeconHigestValue() {
+        let array2 = [2, 4, 5, 3, 1];
+        let r = array2.sort((a, b) => {
+          // let  secMax =
+        });
+        let secMax = r[1];
+        console.log(secMax);
+      }
+      getSeconHigestValue();
+      function makeKeyAndValueFromArray() {
+        let array2 = [2, 4, 5, 3, 1];
+        let obj = {};
+        array2.map((n, i) => {
+          // obj[i] = n;
+          obj[i] = n;
+          // console.log(obj.index);
+        });
+        console.log(obj);
+      }
+      makeKeyAndValueFromArray();
+
+      function sortFromEvenToOdd(...arr) {
+        let result = arr.sort((a, b) => (a & 1) - (b & 1));
+        console.log(result);
+      }
+      sortFromEvenToOdd(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11);
+
+      function getLowestEvenNum(...arr) {
+        let evenNum = arr.filter(n => n % 2 === 0);
+        let lowestEven = Math.min(...evenNum);
+        console.log(lowestEven);
+      }
+
+      getLowestEvenNum(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11);
+      function getLowestOddNum(...arr) {
+        let OddNum = arr.filter(n => n % 2 === 1);
+        let lowestOdd = Math.min(...OddNum);
+        console.log(lowestOdd);
+      }
+
+      getLowestOddNum(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11);
+
+      const getUniqueValues = arr => {
+        return arr.filter((a, b, c) => c.indexOf(a) !== b);
+      };
+      console.log(getUniqueValues([1, 2, 4, 6, 6, 8, 7]));
+      const checkDivisbleByTwo = arr => {
+        return arr.every(v => v % 2 == 0);
+      };
+      console.log(checkDivisbleByTwo([1, 2, 4, 6, 6, 8, 7]));
+
+      const positionOfUniqueElem = (...arr) => {
+        let uniqueElem = arr.filter((a, b, c) => c.indexOf(a) !== b);
+        let uniqueElemPos = arr.findIndex(index => index == uniqueElem);
+        console.log(uniqueElemPos);
+      };
+      positionOfUniqueElem(1, 2, 4, 6, 6, 8, 7);
+
+      let strA = ["chi", "dog", "chi", "boy", 2, 4, 6, 2];
+      let res = new Set(strA);
+      console.log(res);
+
+      function reshuffle(string) {
+        let res = string
+          .toString()
+          .split("")
+          .sort(n => 0.5 - Math.random(n))
+          .join("");
+        console.log(res);
+      }
+      reshuffle("chibuike");
+
+      function arrt(arr) {
+        let res = arr.sort((a, b) => b.localeCompare(a));
+        console.log(res);
+      }
+      arrt([
+        "1",
+        "2",
+        "4",
+        "5",
+        "6",
+        "A",
+        "W",
+        "D",
+        "a",
+        "y",
+        "h",
+        "z",
+        "d",
+        "8",
+        "0",
+        "6",
+        "w"
+      ]);
+      let arrStr = ["chibuike"];
+      console.log(arrStr.includes("i"));
+    </script>
+  </body>
+</html>
