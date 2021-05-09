@@ -103,7 +103,7 @@ const returnCharactThatAppealsDMost = str => {
   // return result
   let max = Math.max(...Object.values(result));
   let res = Object.keys(result).filter(value => result[value] === max);
-  return res;
+  return `${max} ${res}`;
 };
 console.log(returnCharactThatAppealsDMost("helooll"));
 
@@ -126,9 +126,31 @@ const countVowelSound = vowe => {
 };
 console.log(countVowelSound("chibuike"));
 
-let names = ["chi", "me", "color"];
+let names = ["chi", "me", "color"].filter(v => v.endsWith("r"));
+let namess = ["chi", "me", "color"].filter(v => v.startsWith("c"));
 for (let i = 0; i < names.length; i++) {
-  console.log(names[i].endsWith('r'));
+  console.log(names[i].startsWith("c"));
 }
+console.log(names);
+console.log(namess);
 // chibuike read up this
 // constructor proptotypal inheritance, es6 classes
+
+const secondNum = nums => {
+  let result = nums.filter((a, b, c) => c.indexOf(a) === b);
+  let ansa = result.sort((a, b) => b - a);
+  console.log(ansa[1]);
+};
+secondNum([1, 2, 3, 4, 5, 6, 6, 5, 5, 5, , 99, 99, 99, 100]);
+
+const chuck = (arr, target) => {
+  let arrs = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (i + 1) {
+      let res = arr.splice(i--, target);
+      arrs.push(res);
+    }
+  }
+  console.log(arrs);
+};
+chuck([1, 2, 3, 4, 5], 1);
