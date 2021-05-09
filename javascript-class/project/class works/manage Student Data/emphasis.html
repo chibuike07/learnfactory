@@ -80,8 +80,7 @@
       </div>
     </div>
   </body>
-  <script src="hiy.js"></script>
-    <script>
+  <script>
     const obj = [
       {
         question: "what is this application all about",
@@ -101,47 +100,32 @@
     ];
     let pElement = document.getElementById("ques");
     let ans = document.getElementById("ans");
-    // obj.map(n => {
-    //   let liElement = document.createElement("li");
-    //   aElement = document.createElement("a");
-    //   aElement.innerText = n.question;
-    //   liElement.appendChild(aElement);
-    //   pElement.appendChild(liElement);
-    //   });
-    let c = 2;
+
+    let length = 2;
 
     function slide() {
-      let a = obj.map(n => n.question);
-      console.log(a);
-      c = c + 1;
-      c = c % a.length;
-      let b = a[c];
-      pElement.innerText = a[c];
+      let question = obj.map(property => property.question);
+      length = length + 1;
+      length = length % question.length;
+      pElement.innerText = question[length];
       pElement.addEventListener("click", questionClick);
       ans.innerText = "";
-      if (pElement.innerText.toLowerCase() == a[2]) {
+      if (pElement.innerText.toLowerCase() == question[2]) {
         document.onkeydown = e => {
           if (e.keyCode == 32) {
             e.preventDefault();
-            location.replace("tableData-refix.html");
+            location.replace("manage_data.html");
           }
         };
       }
-
-      //   location.replace("tableData-refix.html");
     }
 
-    // }
     function questionClick() {
-      alert("yes");
-      obj.forEach(n => {
-        if (n.question.toUpperCase() === this.innerText) {
-          ans.innerText = n.answer;
+      obj.forEach(text => {
+        if (text.question.toUpperCase() === this.innerText) {
+          ans.innerText = text.answer;
         }
       });
     }
-
-    //   console.log(a)
-    // });
   </script>
 </html>

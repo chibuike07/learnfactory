@@ -4,7 +4,6 @@
   margin: 0%;
   box-sizing: border-box;
 }
-
 html {
   image-rendering: optimizeQuality;
   text-rendering: optimizeLegibility;
@@ -129,25 +128,11 @@ section {
   .middle {
     left: 25%;
   }
-  .middle b {
-    /* color: red; */
-    /* font-size: large; */
-  }
-
-  .middle small {
-    /* font-size: large; */
-  }
 }
 @media screen and (max-width: 1400px) {
   .middle {
     /* color: red; */
     top: 40%;
     left: 25%;
-  }
-  .middle b {
-    /* font-size: large; */
-  }
-  .middle small {
-    /* font-size: large; */
   }
 }

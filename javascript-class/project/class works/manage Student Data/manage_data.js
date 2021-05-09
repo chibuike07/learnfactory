@@ -1,15 +1,3 @@
-// data[varriable] = "lawrencel"
-// "lawrencel"
-// data
-// Object { name: "lawrencel" }
-
-// data["amount"] = "lawrencel"
-// "lawrencel"
-// data
-// Object { name: "lawrencel", amount: "lawrencel" }
-
-// ​
-
 let courseInp = document.getElementById("tex");
 let thead = document.getElementById("thead"),
   tbody,
@@ -22,7 +10,6 @@ let thead = document.getElementById("thead"),
 table.setAttribute("border", "3");
 co = 0;
 function addTableHead(...inp) {
-  // co++;
   table = document.getElementById("table");
   thead = document.getElementById("thead");
   let th = document.createElement("th");
@@ -36,18 +23,17 @@ function addTableHead(...inp) {
   th.innerText = inp;
   thead.appendChild(th);
   table.appendChild(thead);
-  // console.log(inp, co);
   document.getElementById("form").reset();
 }
 function addTableBody() {
-   if (document.getElementById("nm").value == "") {
-     alert("name must not be left empty");
-     document.getElementById("nm").focus();
-     return false;
-   }
+  if (document.getElementById("nm").value == "") {
+    alert("name must not be left empty");
+    document.getElementById("nm").focus();
+    return false;
+  }
   tbody = document.getElementById("tbody");
   tableRow = table.insertRow(table.length);
- 
+
   input = {
     nam: document.getElementById("nm").value,
     eng: document.getElementById("en").value,
@@ -73,11 +59,11 @@ function addTableBody() {
   cell4.innerText = input.econs;
   cell5.innerText = input.agric;
   cell6.innerText = input.art;
-  cell7.innerText = Number();
+  cell7.innerText = average; //Number();
   cell8.innerText = Number();
   cell9.innerText = String();
   tbody.appendChild(tableRow);
-  table.appendChild(tbody)
+  table.appendChild(tbody);
   array.push(input);
   // console.log(array);
 }
@@ -173,24 +159,24 @@ function emptyCells() {
   for (values of spac) {
     let fromTwoValues;
     if (values.length >= 2) {
-       fromTwoValues = values.join(" & ");
-      liElement.innerText = input.nam + ' u were absent in ' + fromTwoValues;
+      fromTwoValues = values.join(" & ");
+      liElement.innerText = input.nam + " u were absent in " + fromTwoValues;
       spacedData.appendChild(liElement);
       // console.log(fromTwoValues);
     } else {
-      liElement.innerText = input.nam +  ' u were absent in ' + values;
+      liElement.innerText = input.nam + " u were absent in " + values;
       spacedData.appendChild(liElement);
     }
   }
 }
 let studentCount = 0;
-let studCount = document.getElementById('studCount');
+let studCount = document.getElementById("studCount");
 // function studentAttendant(){
 //   studentCount++
 //   let studentLen = array.filter(n => n)
-//   studCount.innerText = `${studentCount} student wrote the test` 
+//   studCount.innerText = `${studentCount} student wrote the test`
 //     console.log(studentCount)
-  
+
 // }
 // function passedStudent(){
 //   let arrayOfStudent = array.filter(n => n.grade)
@@ -202,6 +188,3 @@ document.addEventListener("DOMContentLoaded", () => {
   th.innerText = "Name";
   thead.appendChild(th);
 });
-
-
-
